@@ -1,0 +1,8 @@
+> Database:
+>
+> Database name	 945389_tyflos2015
+> User name	 945389_tyflo2015
+> Password 	TyflosUV2015
+> Hostname	mysql51-126.wc1.ord1.stabletransit.com
+> Online Manager: 	https://mysql.ord1-1.websitesettings.com 
+> Database Management IP Address	 23.253.3.9

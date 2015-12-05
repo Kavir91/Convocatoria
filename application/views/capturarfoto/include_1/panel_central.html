@@ -1,0 +1,31 @@
+
+
+<div class="row">
+    <div class="col-md-6">
+        <center>
+            <h2 tabindex="2" role="presentation">Verificar la fotografía</h2>
+            <img src="<?= $img_path;?>" alt="tu fotografía">
+        </center>
+    </div>
+    <div class="col-md-6">
+        <center>
+            <h3>¿Es correcta la fotografía?</h3>
+        </center>
+
+        <div class='row'>
+            <div class='col-md-6'>
+                <center>
+                    <form action="<?= base_url('index.php/capturarfoto/confirmar') ?>">
+                        <button class="btn btn-primary" style="width: 4em">Sí</button>
+                    </form>
+                </center>
+            </div>
+            <div class='col-md-6'>
+                <center>
+                    <a href="<?= base_url('index.php/capturarfoto') ?>" class="btn btn-primary" style="width: 4em" role='button'>No</a>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+

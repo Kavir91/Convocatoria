@@ -1,0 +1,16 @@
+<?php if ( validation_errors()!="" ) : ?>
+<div class="list-group" id="panel2" name="panel" tabindex="0">
+    <a class="list-group-item active list-group-item-danger">
+        <h3 class="list-group-item-heading" role="presentation">Error</h3>
+        <p class="list-group-item-text"></p>
+    </a>
+    <?php 
+    
+    foreach ($errores as $key => $val){?>
+    <a class="list-group-item" tabindex="0">
+        <h4 class="list-group-item-heading" role="presentation"><?php echo $val ?></h4>
+        <p class="list-group-item-text"></p>
+    </a>
+    <?php } ?>
+</div> 
+ <?php  endif; ?>

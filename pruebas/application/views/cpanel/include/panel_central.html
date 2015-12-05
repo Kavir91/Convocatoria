@@ -1,0 +1,76 @@
+<H2 tabindex="1">PROCESO DE REGISTRO AL EXAMEN DE INGRESO A LICENCIATURA Y TÉCNICO SUPERIOR UNIVERSITARIO</H2>
+<div class="list-group">
+    <div class="list-group-item list-group-item-section" name="seccion" id="seccion1" tabindex="2">
+        <h3 role="presentation" class="list-group-item-heading" >Resumen:</h3>
+    </div>
+
+    <div class="list-group-item" tabindex="3">
+        <P>
+            Folio UV: <?php echo $this->nativesession->get('asp')->aspirante->folio; ?> <BR>
+            Anota y recuerda éste folio, es necesario para continuar con tú registro.
+        </P>
+    </div>  
+    <div class="list-group-item" tabindex="4">
+
+        <P>
+            Fecha de nacimiento: <?php
+            $meses=array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+            $date = DateTime::createFromFormat('d/m/Y',$this->nativesession->get('asp')->aspirante->fechadenacimiento );
+            //date_create($this->nativesession->get('asp')->aspirante->fechadenacimiento);
+
+            $dia=date_format($date, "d");
+            $mes=date_format($date, "m");
+            $año=date_format($date, "Y");
+            echo $dia." de ".$meses[$mes-1]." de ".$año;
+            ?> 
+        </P>
+    </div>
+    <div class="list-group-item" tabindex="5">
+        <P>
+            Tu nombre:   <?php echo $this->nativesession->get('asp')->aspirante->asp_nombres." ".$this->nativesession->get('asp')->aspirante->asp_apellidopaterno." ".$this->nativesession->get('asp')->aspirante->asp_apellidomaterno;?>
+        </P>
+    </div>
+</div>
+
+<div class="list-group">
+    <div class="list-group-item list-group-item-section" name="seccion" id="seccion2" tabindex="6">
+        <h3 role="presentation" class="list-group-item-heading" >Actividades del aspirante:</h3>
+    </div>
+    <input type="hidden" id="HIF" value="<?= $permisos[0]->imprimirFolio ?>">
+    <A class="list-group-item" tabindex="7" id="IF" href="<?php echo base_url('index.php/imprimirfolio'); ?>">
+        <P>Imprimir folio UV</P>
+    </A>
+    <input type="hidden" id="HDE" value="<?= $permisos[0]->datosEscolares ?>">
+    <A class="list-group-item" tabindex="8" id="DE" href="<?php echo base_url('index.php/registro/datosEscolares'); ?>">
+        <P>Ingresar datos escolares faltantes</P>
+    </A>
+    <input type="hidden" id="HDP" value="<?= $permisos[0]->datosPersonales ?>">
+    <A class="list-group-item" tabindex="8" id="DP" href="<?php echo base_url('index.php/registro/datosPersonales'); ?>">
+        <P>Ingresar datos personales faltantes</P>
+    </A>
+    <input type="hidden" id="HDF" value="<?= $permisos[0]->datosFamiliares ?>">
+    <A class="list-group-item" tabindex="9" id="DF" href="<?php echo base_url('index.php/registro/datosFamiliares'); ?>">
+        <P>Ingresar datos familiares faltantes</P>
+    </A>
+    <input type="hidden" id="HCUE" value="<?= $permisos[0]->cuestionario ?>">
+    <A class="list-group-item" tabindex="10" id="CUE" href="<?php echo base_url('index.php/cuestionario'); ?>">
+        <P>Contestar cuestionario de contexto</P>
+    </A>
+    <input type="hidden" id="HIP" value="<?= $permisos[0]->imprimirPago ?>">
+    <A class="list-group-item" tabindex="11" id="IP" href="<?php echo base_url('index.php/imprimirordenpago'); ?>">
+        <P>Imprimir la orden de pago</P>
+    </A>
+    <input type="hidden" id="HSF" value="<?= $permisos[0]->subirFotografia ?>">
+    <A class="list-group-item" tabindex="12" id="SF" href="<?php echo base_url('index.php/capturarfoto'); ?>">
+        <P>Subir mi fotografía</P>
+    </A>
+    <input type="hidden" id="HIC" value="<?= $permisos[0]->imprimirCredencial ?>">
+    <A class="list-group-item" tabindex="12" id="IC" href="<?php echo base_url('index.php/credencial'); ?>">
+        <P>Imprimir credencial.</P>
+    </A>
+    <input type="hidden" id="HCC" value="<?= $permisos[0]->cambiarCarrera ?>">
+    <A class="list-group-item" tabindex="12" id="CC" href="<?php echo base_url('index.php/cambiarcarrera'); ?>">
+        <P>Cambiar carrera.</P>
+    </A>
+
+</div>

@@ -1,0 +1,195 @@
+<h1 tabindex="2" role="presentation">Proceso para imprimir Orden de pago</h1>
+
+
+<div class="list-group">
+    <a class="list-group-item active list-group-item-info">
+        <h3 class="list-group-item-heading" tabindex="2" role="presentation">Fecha</h3>
+    </a>
+
+
+    <div class="list-group-item" tabindex="2" > 
+        <p>
+            <?php
+
+            $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+            $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+            echo $dias[date('w')]." ".(date('d'))." de ".$meses[date('n')-1]. " del ".date('Y') ;
+
+
+            ?>
+        </p>
+    </div>  
+</div>
+<div class="list-group">
+
+    <div tabindex="3" name="seccion" id="seccion1" class="list-group-item list-group-item-section">
+        <h3 class="list-group-item-heading" role="presentation">Seccion 1: Datos del Aspirante</h3>
+        <p>
+            Debes presionar la tecla tabulador para desplazarte sobre la sección.
+        </p>
+    </div>
+
+    <div class="list-group-item" tabindex="3">
+        <P>
+            Nombre:   <?php echo $this->nativesession->get('asp')->aspirante->asp_nombres." ".$this->nativesession->get('asp')->aspirante->asp_apellidopaterno." ".$this->nativesession->get('asp')->aspirante->asp_apellidomaterno;?>
+        </P>
+    </div>
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">FolioUV:</h4>
+        <p >
+            <?php echo $this->nativesession->get('asp')->aspirante->folio; ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Correo:</h4>
+        <p>
+            <?php echo $this->nativesession->get('asp')->aspirante->asp_email; ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Carrera solicitada:</h4>
+        <p >
+            <?php echo ($this->nativesession->get('asp')->solicitudes[0]->car_nombrecarrera);?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Región:</h4>
+        <p >
+            <?php
+            echo ($this->nativesession->get('asp')->solicitudes[0]->car_nombreregion);
+            ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Modalidad: </h4>
+        <p >
+            <?php
+            echo ($this->nativesession->get('asp')->solicitudes[0]->car_modalidad);
+            ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Nivel:</h4>
+        <p>
+            <?php
+            echo ($this->nativesession->get('asp')->solicitudes[0]->car_nombrenivel);
+            ?>
+        </p>
+    </div> 
+
+
+</div>
+<div class="list-group">
+
+    <div tabindex="3" name="seccion" id="seccion2" class="list-group-item list-group-item-section" >
+        <h3 class="list-group-item-heading" role="presentation">Sección 2: Para pagar</h3>
+        <p>
+            Debes presionar la tecla tabulador para desplazarte sobre la sección.
+        </p>
+    </div>
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Concepto:</h4>
+        <p>
+            REGISTRO AL EXAMEN
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Monto:</h4>
+        <p>
+            <?php if ($this->nativesession->get('asp')->aspirante->asp_nacionalidad=='M'){
+            echo $this->nativesession->get('asp')->solicitudes[0]->car_costomexicanos;
+            }else{
+            echo $this->nativesession->get('asp')->solicitudes[0]->car_costoextranjeros;
+            }
+            ?> pesos Moneda Nacional
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Cuenta:</h4>
+        <p>
+            4591-34891
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Clave de Referencia:</h4>
+        <p>
+            <?php
+            echo ($this->nativesession->get('asp')->solicitudes[0]->ref_codigo);
+            ?>
+        </p>
+    </div> 
+
+
+
+    <div class="list-group-item" tabindex="3" > 
+        <div class="justificado">
+            <p> Confirma que la CLAVE DE REFERENCIA y el MONTO de este documento coincidan
+                con la Referencia Alfanumérica  y el Importe Total de tu ficha de desposito Banamex. 
+            </p> 
+        </div>
+    </div>  
+    <div class="list-group-item" tabindex="3" > 
+        <div class="justificado">
+            <h2 role='presentation' tabindex="3">ÚLTIMO DÍA DE PAGO 8 DE ABRIL DEL 2015</h2>
+
+            <p> 
+
+                Conserva esta orden de pago, es útil para para continuar con el registro y futuras aclaraciones.
+                Efectuado el pago No se hará ninguna devolución.
+            </p> 
+        </div>
+    </div> 
+
+
+    <div class="list-group">
+
+        <div tabindex="3" name="seccion" id="seccion3" class="list-group-item list-group-item-section" >
+            <h3 class="list-group-item-heading" role="presentation">Sección 3: Pasos a seguir</h3>
+            <p>
+                Debes presionar la tecla tabulador para desplazarte sobre la sección.
+            </p>
+        </div>
+
+
+
+        <div class="list-group-item" tabindex="5" > 
+            <div class="justificado">
+                <p> PASO 2 ANEXAR LA FOTO E IMPRIMIR CREDENCIAL
+                </p> 
+            </div>
+        </div>
+        <div class="list-group-item" tabindex="5" > 
+            <div class="justificado">
+                <p> *Anexa tu foto del 25 de febrero al 11 de mayo. </p> 
+                <p> *Prepara archivo con tu foto digital</p>
+                <p> *Ingresa al portal dos días habiles después de haber pagado</p>
+                <p>     Usar folio UV y contraseña</p>
+                <p> *La foto fue revisada. Consulta en el portal si fue aceptada</p>
+                <p>     Si fue rechazada podrás anexar una nueva foto (límite 20 de abril)</p>
+                <p> Imprime tu credencial a partir del  20 de Abril al 20 de Mayo del 2015.</p>
+                <p> Con la impresión de la credencial para Examen concluye el registro.
+                    La credencial es el documento que da derecho a presentar el examen</p>
+
+            </div>
+        </div>
+
+    </div>
+    <form action="<?= base_url('index.php/imprimirordenpago/imprimirpago')?>">    
+        <input class="btn btn-lg btn-primary btn-block" type="submit" tabindex="6"   value="IMPRIMIR" aria-describedby="info1"> <br>
+    </form>
+    <form action="<?php echo base_url() ?>index.php/cpanel">
+        <input class="btn btn-lg btn-primary btn-block" type="submit" tabindex="6"   value="REGRESAR" aria-describedby="info2"> 
+    </form>
+
+
+    <div id="info1" aria-hidden="true" name = "Adesc">
+        ÉSTE BOTÓN TE LLEVARÁ A IMPRIMIR TU FOLIO, en esta página deberas apretar tabulador y enter para imprimir.
+    </div>
+    <div id="info2" aria-hidden="true" name = "Adesc">
+        ÉSTE BOTÓN TE LLEVARÁ A LA PÁGINA DE PROCESO DE INGRESO DE LICENCIATURA y TSU.
+    </div>
+
+
+
+

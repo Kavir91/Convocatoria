@@ -1,0 +1,547 @@
+<form action='<?php echo base_url()?>index.php/registro/datosfamiliares/true' method='post'>
+    <div class="list-group">
+        <div tabindex="10" name="seccion" id="seccion1" class="list-group-item list-group-item-section">
+            <h2 role="presentation"> Sección 1; Registro de datos familiares.</h2>
+            <p>
+                Debes seleccionar de quien dependes económicamente.
+            </p>
+        </div>
+        <div class="list-group-item ">
+            <div class="row">
+                <label for="asp_mismodom">¿El domicilio donde vive tu familia es el mismo en que vivirás mientras estudias?</label>
+                <input type="hidden" id="Hasp_mismodom" value="<?php echo set_value('asp_mismodom'); ?>">
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <input tabindex="10" name="asp_mismodom" checked  id="asp_mismodom" value="S" type="radio">
+                            <label for="asp_mismodom">Sí</label>
+                        </td>
+                        <td>
+                            <input tabindex="10" name="asp_mismodom" id="asp_mismodom1" value="N" type="radio">
+                            <label for="asp_mismodom">No</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="row">
+                <label for="dependpadre">Dependes económicamente de: (puedes marcar más de uno)</label>
+            </div>
+            <div class="row">
+                <input type="hidden" id="Hdependpadre" value="<?php echo set_value('dependpadre'); ?>">
+                <input tabindex="10" name="dependpadre" id="dependpadre" value="P" type="checkbox">
+                <label for="dependpadre">Padre</label>
+            </div>
+            <div class="row">
+                <input type="hidden" id="Hdependmadre" value="<?php echo set_value('dependmadre'); ?>">
+                <input tabindex="10" name="dependmadre" id="dependmadre" value="M" type="checkbox">
+                <label for="dependmadre">Madre</label>
+            </div>
+            <div class="row">
+                <input type="hidden" id="Hdependhermano" value="<?php echo set_value('dependhermano'); ?>">
+                <input tabindex="10" name="dependhermano" id="dependhermano" value="H" type="checkbox">
+                <label for="dependhermano">Hermana ó hermano</label>
+            </div>
+            <div class="row">
+                <input type="hidden" id="Hdependfamiliares" value="<?php echo set_value('dependfamiliares'); ?>">
+                <input tabindex="10" name="dependfamiliares" id="dependfamiliares" value="F" type="checkbox">
+                <label for="dependfamiliares">Familiares</label>
+            </div>
+            <div class="row">
+                <input type="hidden" id="Hdependbeca" value="<?php echo set_value('dependbeca'); ?>">
+                <input tabindex="10" name="dependbeca" id="dependbeca" value="B" type="checkbox">
+                <label for="dependbeca">Beca</label>
+            </div>
+            <div class="row">
+                <input type="hidden" id="Hdependyo" value="<?php echo set_value('dependyo'); ?>">
+                <input tabindex="10" name="dependyo" id="dependyo" value="Y" type="checkbox">
+                <label for="dependyo">Yo mismo</label>
+            </div>
+            <div class="row">
+                <input type="hidden" id="Hdependotros" value="<?php echo set_value('dependotros'); ?>">
+                <input tabindex="10" name="dependotros" id="dependotros" value="O" type="checkbox">
+                <label for="dependotros">Otros</label>
+                <input id="Idependotros" name="Idependotros" value="<?php echo set_value('Idependotros'); ?>">
+            </div>
+            <hr>
+            <div class="row">
+                <input type="hidden" id="Hasp_cuantoscontribuyen" value="<?php echo set_value('asp_cuantoscontribuyen'); ?>">
+                <label for="asp_cuantoscontribuyen">¿Cuántos contribuyen al ingreso familiar? (se refiere a tu familia)</label>
+                <select tabindex="10" id="asp_cuantoscontribuyen" name="asp_cuantoscontribuyen" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <!--<input name="" id="asp_cuantoscontribuyen1" class="form-control" min="1" max="5" style="width:45px" type="text"  maxlength="1"  onkeypress='return validateNumber(event)'>-->
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="list-group" id="contribuyente_1" name="contribuyente">
+            <div tabindex="20" name="seccion" id="seccion2" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 2; datos del contribuyente número 1 </h2>
+                <p>
+                    0
+                </p>
+            </div>
+            <div class="list-group-item " id="DDcontribuyente_1">
+                <div class="row">
+                    <label for="nombre_1">Nombre</label>
+                    <input maxlength="50" tabindex="20" name="nombre_1" id="nombre_1" class="form-control" type="text" value="<?php echo set_value('nombre_1'); ?>">
+
+                    <label for="appaterno_1">Primer apellido</label>
+                    <input maxlength="25" tabindex="20" name="appaterno_1" id="appaterno_1" class="form-control" type="text" value="<?php echo set_value('appaterno_1'); ?>">
+
+                    <label for="apmaterno_1">Segundo apellido</label>
+                    <input maxlength="25" tabindex="20" name="apmaterno_1" id="apmaterno_1" class="form-control" type="text" value="<?php echo set_value('apmaterno_1'); ?>">
+
+                    <label for="sexo_1">Sexo</label>
+                    <input type="hidden" id="Hsexo_1" value="<?php echo set_value('sexo_1'); ?>">
+                    <select tabindex="20" name="sexo_1" id="sexo_1" class="form-control" >
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+
+                    <label for="edad_1">¿Qué edad tiene? en años cumplidos</label>
+                    <input maxlength="2" tabindex="20" name="edad_1" id="edad_1" class="form-control" type="text" value="<?php echo set_value('edad_1'); ?>">
+
+                    <label for="parentesco_1">¿Qué parentesco tiene contigo?</label>
+                    <input type="hidden" id="Hparentesco_1" value="<?php echo set_value('parentesco_1'); ?>">
+                    <select tabindex="20" name="parentesco_1" id="parentesco_1" class="form-control">
+                        <option value="Padre">Padre</option>
+                        <option value="Madre">Madre</option>
+                        <option value="Esposo">Esposo / Cónyuge</option>
+                        <option value="Otro">Otro pariente</option>
+                        <option value="Yo">Soy yo mismo</option>                
+                        <option value="Sin">Sin parentesco</option>
+                    </select>
+
+                    <label for="ultimogrado_1">¿Cuál fue el último grado que aprobó en la escuela?</label>
+                    <input type="hidden" id="Hultimogrado_1" value="<?php echo set_value('ultimogrado_1'); ?>">
+                    <select tabindex="20" name="ultimogrado_1" id =ultimogrado_1 class="form-control">
+                        <option value="nunca">Nunca fue a la escuela</option>
+                        <option value="primaria">Primaria</option>
+                        <option value="secundaria">Secundaria</option>
+                        <option value="bachillerato">Bachillerato (preparatoria, vocacional o equivalente)</option>
+                        <option value="licenciatura">Licenciatura o Superior</option>
+                        <option value="nosabe">No sabe</option>
+                    </select>
+
+                    <label for="asisteescuela_1">¿Asiste actualmente a estudiar a la escuela?</label>
+                    <input type="hidden" id="Hasisteescuela_1" value="<?php echo set_value('asisteescuela_1'); ?>">
+                    <select tabindex="20" name="asisteescuela_1" id="asisteescuela_1" class="form-control">
+                        <option value="S">Sí</option>
+                        <option value="N">No</option>
+                    </select>
+
+                    <label for="quehace_1">¿Qué hace en su trabajo?, por ejemplo, arregla coches, vende ropa</label>
+                    <input maxlength="50" tabindex="20" name="quehace_1" id="quehace_1" class="form-control" type="text" value="<?php echo set_value('quehace_1'); ?>">
+
+                    <label for="ocupacion_1">¿Cuál es el nombre de la ocupación, oficio o puesto?, por ejemplo, mecánico, comerciante</label>
+                    <input maxlength="50" tabindex="20" name="ocupacion_1" id="ocupacion_1" class="form-control" type="text" value="<?php echo set_value('ocupacion_1'); ?>">
+
+                    <label for="entrabajoes_1">En su trabajo es</label>
+                    <input type="hidden" id="Hentrabajoes_1" value="<?php echo set_value('entrabajoes_1'); ?>">
+                    <select tabindex="20" name="entrabajoes_1" id="entrabajoes_1" class="form-control">
+                        <option value="empleado">Empleado u obrero</option>
+                        <option value="peon">Jornalero o peón</option>
+                        <option value="ayudante">Ayudante</option>
+                        <option value="patron">Patrón o empleador (contrata empleados)</option>
+                        <option value="cuentapropia">Trabaja por cuenta propia (no contrata empleados)</option>
+                        <option value="sinpago">Trabajador(a) familiar sin pago</option>                    
+                    </select>
+
+                    <label for="ingreso_1">¿Cuál es su ingreso mensual?</label>
+                    <input maxlength="6" tabindex="20" name="ingreso_1" id="ingreso_1" class="form-control" type="text" value="<?php echo set_value('ingreso_1'); ?>">
+
+                    <hr>
+
+                    <div>
+                        <label>¿Recibe dinero por? (marca las que apliquen)</label><br>
+                        <input type="hidden" id="Hrecibegob_1" value="<?php echo set_value('recibegob_1'); ?>"> <input tabindex="20" name="recibegob_1" id="recibegob_1" value="S" type="checkbox"> <label for="recibegob_1"> Programas de Gobierno (Oportunidades, Procampo, Becas, Ayuda a madre solteras, Adultos Mayores, etc)</label> <br>
+                        <input type="hidden" id="Hrecibejub_1" value="<?php echo set_value('recibejub_1'); ?>"> <input tabindex="20" name="recibejub_1" id="recibejub_1" value="S" type="checkbox"> <label for="recibejub_1"> Jubilación o pensión </label> <br>
+                        <input type="hidden" id="Hrecibeotropais_1" value="<?php echo set_value('recibeotropais_1'); ?>"> <input tabindex="20" name="recibeotropais_1" id="recibeotropais_1" value="S" type="checkbox"> <label for="recibeotropais_1"> Ayuda de personas que viven en otro país </label> <br>
+                        <input type="hidden" id="Hrecibeestepais_1" value="<?php echo set_value('recibeestepais_1'); ?>"> <input tabindex="20" name="recibeestepais_1" id="recibeestepais_1" value="S" type="checkbox"> <label for="recibeestepais_1">Ayuda de personas que viven en este país </label> <br>
+                        <input type="hidden" id="Hrecibeotras_1" value="<?php echo set_value('recibeotras_1'); ?>"> <input tabindex="20" name="recibeotras_1" id="recibeotras_1" value="S" type="checkbox"> <label for="recibeotras_1"> Otras fuentes</label> <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="list-group" id="contribuyente_2" name="contribuyente">
+            <div tabindex="30" name="seccion" id="seccion3" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 3; datos del contribuyente número 2 </h2>
+                <p>
+                    0
+                </p>
+            </div>
+            <div class="list-group-item ">
+                <div class="row">
+                    <label for="nombre_2">Nombre</label>
+                    <input maxlength="50" tabindex="20" name="nombre_2" id="nombre_2" class="form-control" type="text" value="<?php echo set_value('nombre_2'); ?>">
+
+                    <label for="appaterno_2">Primer apellido</label>
+                    <input maxlength="25" tabindex="20" name="appaterno_2" id="appaterno_2" class="form-control" type="text" value="<?php echo set_value('appaterno_2'); ?>">
+
+                    <label for="apmaterno_2">Segundo apellido</label>
+                    <input maxlength="25" tabindex="20" name="apmaterno_2" id="apmaterno_2" class="form-control" type="text" value="<?php echo set_value('apmaterno_2'); ?>">
+
+                    <label for="sexo_2">Sexo</label>
+                    <input type="hidden" id="Hsexo_2" value="<?php echo set_value('sexo_2'); ?>">
+                    <select tabindex="20" name="sexo_2" id="sexo_2" class="form-control" >
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+
+                    <label for="edad_2">¿Qué edad tiene? en años cumplidos</label>
+                    <input maxlength="2" tabindex="20" name="edad_2" id="edad_2" class="form-control" type="text" value="<?php echo set_value('edad_2'); ?>">
+
+                    <label for="parentesco_2">¿Qué parentesco tiene contigo?</label>
+                    <input type="hidden" id="Hparentesco_2" value="<?php echo set_value('parentesco_2'); ?>">
+                    <select tabindex="20" name="parentesco_2" id="parentesco_2" class="form-control">
+                        <option value="Padre">Padre</option>
+                        <option value="Madre">Madre</option>
+                        <option value="Esposo">Esposo / Cónyuge</option>
+                        <option value="Otro">Otro pariente</option>
+                        <option value="Yo">Soy yo mismo</option>                
+                        <option value="Sin">Sin parentesco</option>
+                    </select>
+
+                    <label for="ultimogrado_2">¿Cuál fue el último grado que aprobó en la escuela?</label>
+                    <input type="hidden" id="Hultimogrado_2" value="<?php echo set_value('ultimogrado_2'); ?>">
+                    <select tabindex="20" name="ultimogrado_2" id =ultimogrado_2 class="form-control">
+                        <option value="nunca">Nunca fue a la escuela</option>
+                        <option value="primaria">Primaria</option>
+                        <option value="secundaria">Secundaria</option>
+                        <option value="bachillerato">Bachillerato (preparatoria, vocacional o equivalente)</option>
+                        <option value="licenciatura">Licenciatura o Superior</option>
+                        <option value="nosabe">No sabe</option>
+                    </select>
+
+                    <label for="asisteescuela_2">¿Asiste actualmente a estudiar a la escuela?</label>
+                    <input type="hidden" id="Hasisteescuela_2" value="<?php echo set_value('asisteescuela_2'); ?>">
+                    <select tabindex="20" name="asisteescuela_2" id="asisteescuela_2" class="form-control">
+                        <option value="S">Sí</option>
+                        <option value="N">No</option>
+                    </select>
+
+                    <label for="quehace_2">¿Qué hace en su trabajo?, por ejemplo, arregla coches, vende ropa</label>
+                    <input maxlength="50" tabindex="20" name="quehace_2" id="quehace_2" class="form-control" type="text" value="<?php echo set_value('quehace_2'); ?>">
+
+                    <label for="ocupacion_2">¿Cuál es el nombre de la ocupación, oficio o puesto?, por ejemplo, mecánico, comerciante</label>
+                    <input maxlength="50" tabindex="20" name="ocupacion_2" id="ocupacion_2" class="form-control" type="text" value="<?php echo set_value('ocupacion_2'); ?>">
+
+                    <label for="entrabajoes_2">En su trabajo es</label>
+                    <input type="hidden" id="Hentrabajoes_2" value="<?php echo set_value('entrabajoes_2'); ?>">
+                    <select tabindex="20" name="entrabajoes_2" id="entrabajoes_2" class="form-control">
+                        <option value="empleado">Empleado u obrero</option>
+                        <option value="peon">Jornalero o peón</option>
+                        <option value="ayudante">Ayudante</option>
+                        <option value="patron">Patrón o empleador (contrata empleados)</option>
+                        <option value="cuentapropia">Trabaja por cuenta propia (no contrata empleados)</option>
+                        <option value="sinpago">Trabajador(a) familiar sin pago</option>                    
+                    </select>
+
+                    <label for="ingreso_2">¿Cuál es su ingreso mensual?</label>
+                    <input maxlength="6" tabindex="20" name="ingreso_2" id="ingreso_2" class="form-control" type="text" value="<?php echo set_value('ingreso_2'); ?>">
+
+                    <hr>
+
+                    <div>
+                        <label>¿Recibe dinero por? (marca las que apliquen)</label><br>
+                        <input type="hidden" id="Hrecibegob_2" value="<?php echo set_value('recibegob_2'); ?>"> <input tabindex="20" name="recibegob_2" id="recibegob_2" value="S" type="checkbox"> <label for="recibegob_2"> Programas de Gobierno (Oportunidades, Procampo, Becas, Ayuda a madre solteras, Adultos Mayores, etc)</label> <br>
+                        <input type="hidden" id="Hrecibejub_2" value="<?php echo set_value('recibejub_2'); ?>"> <input tabindex="20" name="recibejub_2" id="recibejub_2" value="S" type="checkbox"> <label for="recibejub_2"> Jubilación o pensión </label> <br>
+                        <input type="hidden" id="Hrecibeotropais_2" value="<?php echo set_value('recibeotropais_2'); ?>"> <input tabindex="20" name="recibeotropais_2" id="recibeotropais_2" value="S" type="checkbox"> <label for="recibeotropais_2"> Ayuda de personas que viven en otro país </label> <br>
+                        <input type="hidden" id="Hrecibeestepais_2" value="<?php echo set_value('recibeestepais_2'); ?>"> <input tabindex="20" name="recibeestepais_2" id="recibeestepais_2" value="S" type="checkbox"> <label for="recibeestepais_2">Ayuda de personas que viven en este país </label> <br>
+                        <input type="hidden" id="Hrecibeotras_2" value="<?php echo set_value('recibeotras_2'); ?>"> <input tabindex="20" name="recibeotras_2" id="recibeotras_2" value="S" type="checkbox"> <label for="recibeotras_2"> Otras fuentes</label> <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="list-group" id="contribuyente_3" name="contribuyente">
+            <div tabindex="40" name="seccion" id="seccion4" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 4; datos del contribuyente número 3 </h2>
+                <p>
+                    0
+                </p>
+            </div>
+            <div class="list-group-item ">
+                <div class="row">
+                    <label for="nombre_3">Nombre</label>
+                    <input maxlength="50" tabindex="20" name="nombre_3" id="nombre_3" class="form-control" type="text" value="<?php echo set_value('nombre_3'); ?>">
+
+                    <label for="appaterno_3">Primer apellido</label>
+                    <input maxlength="25" tabindex="20" name="appaterno_3" id="appaterno_3" class="form-control" type="text" value="<?php echo set_value('appaterno_3'); ?>">
+
+                    <label for="apmaterno_3">Segundo apellido</label>
+                    <input maxlength="25" tabindex="20" name="apmaterno_3" id="apmaterno_3" class="form-control" type="text" value="<?php echo set_value('apmaterno_3'); ?>">
+
+                    <label for="sexo_3">Sexo</label>
+                    <input type="hidden" id="Hsexo_3" value="<?php echo set_value('sexo_3'); ?>">
+                    <select tabindex="20" name="sexo_3" id="sexo_3" class="form-control" >
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+
+                    <label for="edad_3">¿Qué edad tiene? en años cumplidos</label>
+                    <input maxlength="2" tabindex="20" name="edad_3" id="edad_3" class="form-control" type="text" value="<?php echo set_value('edad_3'); ?>">
+
+                    <label for="parentesco_3">¿Qué parentesco tiene contigo?</label>
+                    <input type="hidden" id="Hparentesco_3" value="<?php echo set_value('parentesco_3'); ?>">
+                    <select tabindex="20" name="parentesco_3" id="parentesco_3" class="form-control">
+                        <option value="Padre">Padre</option>
+                        <option value="Madre">Madre</option>
+                        <option value="Esposo">Esposo / Cónyuge</option>
+                        <option value="Otro">Otro pariente</option>
+                        <option value="Yo">Soy yo mismo</option>                
+                        <option value="Sin">Sin parentesco</option>
+                    </select>
+
+                    <label for="ultimogrado_3">¿Cuál fue el último grado que aprobó en la escuela?</label>
+                    <input type="hidden" id="Hultimogrado_3" value="<?php echo set_value('ultimogrado_3'); ?>">
+                    <select tabindex="20" name="ultimogrado_3" id =ultimogrado_3 class="form-control">
+                        <option value="nunca">Nunca fue a la escuela</option>
+                        <option value="primaria">Primaria</option>
+                        <option value="secundaria">Secundaria</option>
+                        <option value="bachillerato">Bachillerato (preparatoria, vocacional o equivalente)</option>
+                        <option value="licenciatura">Licenciatura o Superior</option>
+                        <option value="nosabe">No sabe</option>
+                    </select>
+
+                    <label for="asisteescuela_3">¿Asiste actualmente a estudiar a la escuela?</label>
+                    <input type="hidden" id="Hasisteescuela_3" value="<?php echo set_value('asisteescuela_3'); ?>">
+                    <select tabindex="20" name="asisteescuela_3" id="asisteescuela_3" class="form-control">
+                        <option value="S">Sí</option>
+                        <option value="N">No</option>
+                    </select>
+
+                    <label for="quehace_3">¿Qué hace en su trabajo?, por ejemplo, arregla coches, vende ropa</label>
+                    <input maxlength="50" tabindex="20" name="quehace_3" id="quehace_3" class="form-control" type="text" value="<?php echo set_value('quehace_3'); ?>">
+
+                    <label for="ocupacion_3">¿Cuál es el nombre de la ocupación, oficio o puesto?, por ejemplo, mecánico, comerciante</label>
+                    <input maxlength="50" tabindex="20" name="ocupacion_3" id="ocupacion_3" class="form-control" type="text" value="<?php echo set_value('ocupacion_3'); ?>">
+
+                    <label for="entrabajoes_3">En su trabajo es</label>
+                    <input type="hidden" id="Hentrabajoes_3" value="<?php echo set_value('entrabajoes_3'); ?>">
+                    <select tabindex="20" name="entrabajoes_3" id="entrabajoes_3" class="form-control">
+                        <option value="empleado">Empleado u obrero</option>
+                        <option value="peon">Jornalero o peón</option>
+                        <option value="ayudante">Ayudante</option>
+                        <option value="patron">Patrón o empleador (contrata empleados)</option>
+                        <option value="cuentapropia">Trabaja por cuenta propia (no contrata empleados)</option>
+                        <option value="sinpago">Trabajador(a) familiar sin pago</option>                    
+                    </select>
+
+                    <label for="ingreso_3">¿Cuál es su ingreso mensual?</label>
+                    <input maxlength="6" tabindex="20" name="ingreso_3" id="ingreso_3" class="form-control" type="text" value="<?php echo set_value('ingreso_3'); ?>">
+
+                    <hr>
+
+                    <div>
+                        <label>¿Recibe dinero por? (marca las que apliquen)</label><br>
+                        <input type="hidden" id="Hrecibegob_3" value="<?php echo set_value('recibegob_3'); ?>"> <input tabindex="20" name="recibegob_3" id="recibegob_3" value="S" type="checkbox"> <label for="recibegob_3"> Programas de Gobierno (Oportunidades, Procampo, Becas, Ayuda a madre solteras, Adultos Mayores, etc)</label> <br>
+                        <input type="hidden" id="Hrecibejub_3" value="<?php echo set_value('recibejub_3'); ?>"> <input tabindex="20" name="recibejub_3" id="recibejub_3" value="S" type="checkbox"> <label for="recibejub_3"> Jubilación o pensión </label> <br>
+                        <input type="hidden" id="Hrecibeotropais_3" value="<?php echo set_value('recibeotropais_3'); ?>"> <input tabindex="20" name="recibeotropais_3" id="recibeotropais_3" value="S" type="checkbox"> <label for="recibeotropais_3"> Ayuda de personas que viven en otro país </label> <br>
+                        <input type="hidden" id="Hrecibeestepais_3" value="<?php echo set_value('recibeestepais_3'); ?>"> <input tabindex="20" name="recibeestepais_3" id="recibeestepais_3" value="S" type="checkbox"> <label for="recibeestepais_3">Ayuda de personas que viven en este país </label> <br>
+                        <input type="hidden" id="Hrecibeotras_3" value="<?php echo set_value('recibeotras_3'); ?>"> <input tabindex="20" name="recibeotras_3" id="recibeotras_3" value="S" type="checkbox"> <label for="recibeotras_3"> Otras fuentes</label> <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="list-group" id="contribuyente_4" name="contribuyente">
+            <div tabindex="50" name="seccion" id="seccion5" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 5; datos del contribuyente número 4 </h2>
+                <p>
+                    0
+                </p>
+            </div>
+            <div class="list-group-item ">
+                <div class="row">
+                    <label for="nombre_4">Nombre</label>
+                    <input maxlength="50" tabindex="20" name="nombre_4" id="nombre_4" class="form-control" type="text" value="<?php echo set_value('nombre_4'); ?>">
+
+                    <label for="appaterno_4">Primer apellido</label>
+                    <input maxlength="25" tabindex="20" name="appaterno_4" id="appaterno_4" class="form-control" type="text" value="<?php echo set_value('appaterno_4'); ?>">
+
+                    <label for="apmaterno_4">Segundo apellido</label>
+                    <input maxlength="25" tabindex="20" name="apmaterno_4" id="apmaterno_4" class="form-control" type="text" value="<?php echo set_value('apmaterno_4'); ?>">
+
+                    <label for="sexo_4">Sexo</label>
+                    <input type="hidden" id="Hsexo_4" value="<?php echo set_value('sexo_4'); ?>">
+                    <select tabindex="20" name="sexo_4" id="sexo_4" class="form-control" >
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+
+                    <label for="edad_4">¿Qué edad tiene? en años cumplidos</label>
+                    <input maxlength="2" tabindex="20" name="edad_4" id="edad_4" class="form-control" type="text" value="<?php echo set_value('edad_4'); ?>">
+
+                    <label for="parentesco_4">¿Qué parentesco tiene contigo?</label>
+                    <input type="hidden" id="Hparentesco_4" value="<?php echo set_value('parentesco_4'); ?>">
+                    <select tabindex="20" name="parentesco_4" id="parentesco_4" class="form-control">
+                        <option value="Padre">Padre</option>
+                        <option value="Madre">Madre</option>
+                        <option value="Esposo">Esposo / Cónyuge</option>
+                        <option value="Otro">Otro pariente</option>
+                        <option value="Yo">Soy yo mismo</option>                
+                        <option value="Sin">Sin parentesco</option>
+                    </select>
+
+                    <label for="ultimogrado_4">¿Cuál fue el último grado que aprobó en la escuela?</label>
+                    <input type="hidden" id="Hultimogrado_4" value="<?php echo set_value('ultimogrado_4'); ?>">
+                    <select tabindex="20" name="ultimogrado_4" id =ultimogrado_4 class="form-control">
+                        <option value="nunca">Nunca fue a la escuela</option>
+                        <option value="primaria">Primaria</option>
+                        <option value="secundaria">Secundaria</option>
+                        <option value="bachillerato">Bachillerato (preparatoria, vocacional o equivalente)</option>
+                        <option value="licenciatura">Licenciatura o Superior</option>
+                        <option value="nosabe">No sabe</option>
+                    </select>
+
+                    <label for="asisteescuela_4">¿Asiste actualmente a estudiar a la escuela?</label>
+                    <input type="hidden" id="Hasisteescuela_4" value="<?php echo set_value('asisteescuela_4'); ?>">
+                    <select tabindex="20" name="asisteescuela_4" id="asisteescuela_4" class="form-control">
+                        <option value="S">Sí</option>
+                        <option value="N">No</option>
+                    </select>
+
+                    <label for="quehace_4">¿Qué hace en su trabajo?, por ejemplo, arregla coches, vende ropa</label>
+                    <input maxlength="50" tabindex="20" name="quehace_4" id="quehace_4" class="form-control" type="text" value="<?php echo set_value('quehace_4'); ?>">
+
+                    <label for="ocupacion_4">¿Cuál es el nombre de la ocupación, oficio o puesto?, por ejemplo, mecánico, comerciante</label>
+                    <input maxlength="50" tabindex="20" name="ocupacion_4" id="ocupacion_4" class="form-control" type="text" value="<?php echo set_value('ocupacion_4'); ?>">
+
+                    <label for="entrabajoes_4">En su trabajo es</label>
+                    <input type="hidden" id="Hentrabajoes_4" value="<?php echo set_value('entrabajoes_4'); ?>">
+                    <select tabindex="20" name="entrabajoes_4" id="entrabajoes_4" class="form-control">
+                        <option value="empleado">Empleado u obrero</option>
+                        <option value="peon">Jornalero o peón</option>
+                        <option value="ayudante">Ayudante</option>
+                        <option value="patron">Patrón o empleador (contrata empleados)</option>
+                        <option value="cuentapropia">Trabaja por cuenta propia (no contrata empleados)</option>
+                        <option value="sinpago">Trabajador(a) familiar sin pago</option>                    
+                    </select>
+
+                    <label for="ingreso_4">¿Cuál es su ingreso mensual?</label>
+                    <input maxlength="6" tabindex="20" name="ingreso_4" id="ingreso_4" class="form-control" type="text" value="<?php echo set_value('ingreso_4'); ?>">
+
+                    <hr>
+
+                    <div>
+                        <label>¿Recibe dinero por? (marca las que apliquen)</label><br>
+                        <input type="hidden" id="Hrecibegob_4" value="<?php echo set_value('recibegob_4'); ?>"> <input tabindex="20" name="recibegob_4" id="recibegob_4" value="S" type="checkbox"> <label for="recibegob_4"> Programas de Gobierno (Oportunidades, Procampo, Becas, Ayuda a madre solteras, Adultos Mayores, etc)</label> <br>
+                        <input type="hidden" id="Hrecibejub_4" value="<?php echo set_value('recibejub_4'); ?>"> <input tabindex="20" name="recibejub_4" id="recibejub_4" value="S" type="checkbox"> <label for="recibejub_4"> Jubilación o pensión </label> <br>
+                        <input type="hidden" id="Hrecibeotropais_4" value="<?php echo set_value('recibeotropais_4'); ?>"> <input tabindex="20" name="recibeotropais_4" id="recibeotropais_4" value="S" type="checkbox"> <label for="recibeotropais_4"> Ayuda de personas que viven en otro país </label> <br>
+                        <input type="hidden" id="Hrecibeestepais_4" value="<?php echo set_value('recibeestepais_4'); ?>"> <input tabindex="20" name="recibeestepais_4" id="recibeestepais_4" value="S" type="checkbox"> <label for="recibeestepais_4">Ayuda de personas que viven en este país </label> <br>
+                        <input type="hidden" id="Hrecibeotras_4" value="<?php echo set_value('recibeotras_4'); ?>"> <input tabindex="20" name="recibeotras_4" id="recibeotras_4" value="S" type="checkbox"> <label for="recibeotras_4"> Otras fuentes</label> <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="list-group" id="contribuyente_5" name="contribuyente">
+            <div tabindex="60" name="seccion" id="seccion6" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 6; datos del contribuyente número 5 </h2>
+                <p>
+                    0
+                </p>
+            </div>
+            <div class="list-group-item ">
+                <div class="row">
+                    <label for="nombre_5">Nombre</label>
+                    <input maxlength="50" tabindex="20" name="nombre_5" id="nombre_5" class="form-control" type="text" value="<?php echo set_value('nombre_5'); ?>">
+
+                    <label for="appaterno_5">Primer apellido</label>
+                    <input maxlength="25" tabindex="20" name="appaterno_5" id="appaterno_5" class="form-control" type="text" value="<?php echo set_value('appaterno_5'); ?>">
+
+                    <label for="apmaterno_5">Segundo apellido</label>
+                    <input maxlength="25" tabindex="20" name="apmaterno_5" id="apmaterno_5" class="form-control" type="text" value="<?php echo set_value('apmaterno_5'); ?>">
+
+                    <label for="sexo_5">Sexo</label>
+                    <input type="hidden" id="Hsexo_5" value="<?php echo set_value('sexo_5'); ?>">
+                    <select tabindex="20" name="sexo_5" id="sexo_5" class="form-control" >
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+
+                    <label for="edad_5">¿Qué edad tiene? en años cumplidos</label>
+                    <input maxlength="2" tabindex="20" name="edad_5" id="edad_5" class="form-control" type="text" value="<?php echo set_value('edad_5'); ?>">
+
+                    <label for="parentesco_5">¿Qué parentesco tiene contigo?</label>
+                    <input type="hidden" id="Hparentesco_5" value="<?php echo set_value('parentesco_5'); ?>">
+                    <select tabindex="20" name="parentesco_5" id="parentesco_5" class="form-control">
+                        <option value="Padre">Padre</option>
+                        <option value="Madre">Madre</option>
+                        <option value="Esposo">Esposo / Cónyuge</option>
+                        <option value="Otro">Otro pariente</option>
+                        <option value="Yo">Soy yo mismo</option>                
+                        <option value="Sin">Sin parentesco</option>
+                    </select>
+
+                    <label for="ultimogrado_5">¿Cuál fue el último grado que aprobó en la escuela?</label>
+                    <input type="hidden" id="Hultimogrado_5" value="<?php echo set_value('ultimogrado_5'); ?>">
+                    <select tabindex="20" name="ultimogrado_5" id =ultimogrado_5 class="form-control">
+                        <option value="nunca">Nunca fue a la escuela</option>
+                        <option value="primaria">Primaria</option>
+                        <option value="secundaria">Secundaria</option>
+                        <option value="bachillerato">Bachillerato (preparatoria, vocacional o equivalente)</option>
+                        <option value="licenciatura">Licenciatura o Superior</option>
+                        <option value="nosabe">No sabe</option>
+                    </select>
+
+                    <label for="asisteescuela_5">¿Asiste actualmente a estudiar a la escuela?</label>
+                    <input type="hidden" id="Hasisteescuela_5" value="<?php echo set_value('asisteescuela_5'); ?>">
+                    <select tabindex="20" name="asisteescuela_5" id="asisteescuela_5" class="form-control">
+                        <option value="S">Sí</option>
+                        <option value="N">No</option>
+                    </select>
+
+                    <label for="quehace_5">¿Qué hace en su trabajo?, por ejemplo, arregla coches, vende ropa</label>
+                    <input maxlength="50" tabindex="20" name="quehace_5" id="quehace_5" class="form-control" type="text" value="<?php echo set_value('quehace_5'); ?>">
+
+                    <label for="ocupacion_5">¿Cuál es el nombre de la ocupación, oficio o puesto?, por ejemplo, mecánico, comerciante</label>
+                    <input maxlength="50" tabindex="20" name="ocupacion_5" id="ocupacion_5" class="form-control" type="text" value="<?php echo set_value('ocupacion_5'); ?>">
+
+                    <label for="entrabajoes_5">En su trabajo es</label>
+                    <input type="hidden" id="Hentrabajoes_5" value="<?php echo set_value('entrabajoes_5'); ?>">
+                    <select tabindex="20" name="entrabajoes_5" id="entrabajoes_5" class="form-control">
+                        <option value="empleado">Empleado u obrero</option>
+                        <option value="peon">Jornalero o peón</option>
+                        <option value="ayudante">Ayudante</option>
+                        <option value="patron">Patrón o empleador (contrata empleados)</option>
+                        <option value="cuentapropia">Trabaja por cuenta propia (no contrata empleados)</option>
+                        <option value="sinpago">Trabajador(a) familiar sin pago</option>                    
+                    </select>
+
+                    <label for="ingreso_5">¿Cuál es su ingreso mensual?</label>
+                    <input maxlength="6" tabindex="20" name="ingreso_5" id="ingreso_5" class="form-control" type="text" value="<?php echo set_value('ingreso_5'); ?>">
+
+                    <hr>
+
+                    <div>
+                        <label>¿Recibe dinero por? (marca las que apliquen)</label><br>
+                        <input type="hidden" id="Hrecibegob_5" value="<?php echo set_value('recibegob_5'); ?>"> <input tabindex="20" name="recibegob_5" id="recibegob_5" value="S" type="checkbox"> <label for="recibegob_5"> Programas de Gobierno (Oportunidades, Procampo, Becas, Ayuda a madre solteras, Adultos Mayores, etc)</label> <br>
+                        <input type="hidden" id="Hrecibejub_5" value="<?php echo set_value('recibejub_5'); ?>"> <input tabindex="20" name="recibejub_5" id="recibejub_5" value="S" type="checkbox"> <label for="recibejub_5"> Jubilación o pensión </label> <br>
+                        <input type="hidden" id="Hrecibeotropais_5" value="<?php echo set_value('recibeotropais_5'); ?>"> <input tabindex="20" name="recibeotropais_5" id="recibeotropais_5" value="S" type="checkbox"> <label for="recibeotropais_5"> Ayuda de personas que viven en otro país </label> <br>
+                        <input type="hidden" id="Hrecibeestepais_5" value="<?php echo set_value('recibeestepais_5'); ?>"> <input tabindex="20" name="recibeestepais_5" id="recibeestepais_5" value="S" type="checkbox"> <label for="recibeestepais_5">Ayuda de personas que viven en este país </label> <br>
+                        <input type="hidden" id="Hrecibeotras_5" value="<?php echo set_value('recibeotras_5'); ?>"> <input tabindex="20" name="recibeotras_5" id="recibeotras_5" value="S" type="checkbox"> <label for="recibeotras_5"> Otras fuentes</label> <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+    <button style="color:#FFFFFF;  font-weight: bold;" type='submit' class="btn btn-primary btn-lg" tabindex="80" aria-describedby="dBregistrar">Guardar cambios</button>
+</form> 

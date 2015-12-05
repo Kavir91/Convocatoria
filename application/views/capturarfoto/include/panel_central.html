@@ -1,0 +1,57 @@
+<h1 tabindex="2" role="presentation">INDICACIONES PARA SUBIR LA FOTO</h1>
+
+
+<div class="list-group">         
+
+
+    <div class="justificado">
+        <p tabindex="4" > 1. Dudas: consulta desde el Portal U V, en el botón CÓMO HACER LA FOTO             </p> 
+        <p tabindex="4" > Ten listo el archivo con la foto digital.</p>   
+        <p tabindex="4" > A color, fondo blanco y ropa obscura;</p>               
+        <p tabindex="4" > 2. De la cara, de frente y sin lentes;</p>
+        <p tabindex="4" > Cabeza, frente y orejas descubiertas;</p>
+        <p tabindex="4" > Sin retocar y tomada recientemente en este año.</p>  
+        <p tabindex="4" > En formato .JPG y medir 480 píxeles de ancho por 640 píxeles de alto.</p> 
+        <p tabindex="4" > 3. En el botón Examinar selecciona el archivo de tu foto</p> 
+        <p tabindex="4" > Verifica que tu foto sea de las dimensiones solicitadas</p> 
+        <p tabindex="4" > 4. Si tu foto no es de 480x640 pixeles, la puedes reducir bajando a tu computadora alguna utileria.</p>
+        <p tabindex="4" > 5. Revisaremos todas las fotos. Consulta en el portal si fue aceptada
+            Si fue rechazada pódras cambiarla por una nueva foto</p>
+        <p tabindex="4" > 6. Si tu foto es correcta podrás imprimir tu Credencial para el examen a partir de la fecha señalada en la convocatoria de nuevo ingreso,
+            en esta credencial se te indica la sede o lugar de examen, fecha, hora, salón y banca</p>
+        <p tabindex="4" > Con la impresión de tu credencial concluye tu registro al examen.</p>
+        <p tabindex="4" > IMPORTANTE: para ingresar a la sede y tener derecho a presentar el Examen es requisito 
+            presentar la Credencial para el examen y una identificación oficial con fotografía</p>
+
+    </div>
+
+    <P tabindex="4">
+        Tu nombre:   <?php echo $this->nativesession->get('asp')->aspirante->asp_nombres." ".$this->nativesession->get('asp')->aspirante->asp_apellidopaterno." ".$this->nativesession->get('asp')->aspirante->asp_apellidomaterno;?>
+    </P>
+    <P tabindex="4">
+        Presionando el siguiente botón podras seleccionar de tus archivos la foto que deseas subir:
+    </P>
+
+
+
+    <br>
+    <?php form_open_multipart('capturarfoto/do_upload'); ?>
+
+    
+    <form id="Ffoto" action="<?= base_url('index.php/capturarfoto/do_upload') ?> " method="post" accept-charset="utf-8" enctype="multipart/form-data">
+        <input type="file" name="userfile" size="20" tabindex='4' accept="image/jpg" id='userfile' onfocus="quitarError('userfile')" />
+    <br>
+        <input class="btn btn-lg btn-primary btn-block"  value="Enviar" tabindex="4" type="submit"  > 
+    </form>
+    <br>
+    <form action="<?php echo base_url() ?>index.php/cpanel">
+        <input class="btn btn-lg btn-primary btn-block" type="submit" tabindex="4"   value="Regresar" aria-describedby="info2"> 
+    </form>
+
+    <div id="info2" aria-hidden="true" name = "Adesc">
+        ÉSTE BOTÓN TE LLEVARÁ A LA PÁGINA DE PROCESO DE INGRESO DE LICENCIATURA y TSU.
+    </div>
+
+
+
+

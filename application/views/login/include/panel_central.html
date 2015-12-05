@@ -1,0 +1,63 @@
+<div class="form-group">
+    <center>
+        <!--<h1>Registro UV</h1>-->
+        <div>
+            <h2 role ="presentation" tabindex="2">
+
+                Si no tienes folio U V regístrate
+
+            </h2>
+        </div>
+        <DIV >
+    </center>
+
+    <div class="row" style=" text-align: center;">
+        <div class="col-md-3"></div>
+		<div class="col-md-6">
+            <form action="<?php echo base_url() ?>index.php/declarativa">
+                <input class="btn btn-lg btn-primary" type="submit" tabindex="3"   value="Regístrate" aria-describedby="info3"> 
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <DIV CLASS="row">
+        <DIV CLASS="col-md-3">
+
+        </DIV>
+        <div CLASS="col-md-6" >
+            <form action="<?php echo base_url('index.php/login2/login') ?>" method="post" autocomplete="off">
+            <h2 tabindex="4" role="presentation"> Si ya tienes folio U V, inicia sesión</h2>
+            <label for="foliouv">Folio U V</label>
+            <input id="foliouv" tabindex="5" name="foliouv" class="form-control" placeholder="Folio U V" aria-required="true" type="text" aria-describedby="info1">
+            <br>
+            <label for="password">Contraseña</label>
+            <input id="password" tabindex="6" name="contrasena" class="form-control" placeholder="Contraseña" aria-required="true" type="password" aria-describedby="info2">
+            <br>
+            <center>
+                <input class="btn btn-lg btn-primary"  tabindex="7" type="submit" value="Entrar" aria-describedby="info4">
+            </center>
+            </form>
+        </div>
+        <DIV CLASS="col-md-3">
+
+        </DIV>
+    </DIV>
+
+</div>
+
+
+<div id="info1" aria-hidden="true" name = "Adesc">
+    en éste campo debes escribir tu folio uv
+</div>
+<div id="info2" aria-hidden="true" name = "Adesc">
+    en éste campo debes escribir la contraseña para ingresar a tu página
+</div>
+<div id="info3" aria-hidden="true" name = "Adesc">
+    si presionas éste botón te llevará a la declarativa de privacidad
+</div>
+<div id="info4" aria-hidden="true" name = "Adesc">
+    si presionas este botón te llevará a la página donde podrás ver tus datos personales e imprimir el folio uv
+</div>

@@ -1,0 +1,19 @@
+<?php if ( validation_errors()!="" ) : ?>
+<div role="alert" >
+    <div class="list-group" id="panel2" name="panel" tabindex="2">
+        <a class="list-group-item active list-group-item-danger">
+            <h3 class="list-group-item-heading" role="presentation">Error</h3>
+            <p class="list-group-item-text"></p>
+        </a>
+        <div id="errores">
+            <input type="hidden" id='nErrores'  value='<?php echo count($errores); ?>'>
+            <?php foreach ($errores as $key => $val){?>
+            <a id='E<?php echo $key; ?>' class="list-group-item" tabindex="2" onkeyup="if (event.keyCode === 13) {inputFocus('<?php echo $key; ?>')}" onclick="inputFocus('<?php echo $key; ?>')">
+                <h4 class="list-group-item-heading" role="presentation"><?php echo $val ?></h4>
+                <!--<p class="list-group-item-text"><?php echo $key ?></p>-->
+            </a>
+            <?php } ?>
+        </div>
+    </div> 
+</div>
+<?php  endif; ?>

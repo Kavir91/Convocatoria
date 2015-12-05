@@ -1,0 +1,16 @@
+<!--<link rel="stylesheet" type="text/css" href="altocontraste.css" media="screen">-->
+<form method="post" action="<?php echo base_url('index.php/cuestionario/index/true') ?>">
+    <?php foreach($preguntas as $pregunta){?>
+    <div class="row">
+        <input type="hidden" id="Hpregunta<?php echo $pregunta->cup_id; ?>" name="pregunta[]" value="<?php echo $pregunta->cup_id; ?>">
+        <label for="respuesta<?php echo $pregunta->cup_id; ?>" ><?php echo $pregunta->cup_id." . ".$pregunta->cup_nombre; ?></label>
+        <select onchange="quitarError('respuesta<?php echo $pregunta->cup_id; ?>')" id="respuesta<?php echo $pregunta->cup_id; ?>" name="respuesta<?php echo $pregunta->cup_id; ?>" class="form-control" aria-describedby="dS_cuadrocombinado" >
+            <?php foreach($pregunta->respuestas as $respuesta){ ?>
+            <option value="<?php echo $respuesta->cor_id ?>"><?php echo $respuesta->cor_textorespuesta ?></option>
+            <?php } ?>
+        </select>
+    </div>	
+    <hr>
+    <?php } ?>
+    <input class="btn btn-lg btn-primary btn-block" tabindex="20" type="submit" id="botoncuestionario" value="Enviar cuestionario" aria-describedby="dButon_enviarcuestio">
+</form>

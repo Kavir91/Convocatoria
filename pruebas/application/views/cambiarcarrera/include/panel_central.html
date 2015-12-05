@@ -1,0 +1,40 @@
+<div class="list-group" role="form">
+        <div tabindex="40" name="seccion" id="seccion3" class="list-group-item list-group-item-section" role="region">
+            <h2 role="presentation">Sección; Cambiar carrera.</h2>
+            
+        </div>
+        <div class="list-group-item ">
+            <div class="row">
+                <label for="car_campus">Región</label>
+                <input type="hidden" ID="Hcar_campus" value="<?php echo set_value('car_campus'); ?>">
+                <select tabindex="40" id="car_campus" name="car_campus" class="form-control">
+                    <option value="1">XALAPA</option>
+                    <option value="2">VERACRUZ</option>
+                    <option value="3">CORDOBA ORIZABA</option>
+                    <option value="4">POZA RICA - TUXPAN</option>
+                    <option value="5">COATZACOALCOS - MINATITLAN</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="car_modalidad">Modalidad:</label>
+                <input type="hidden" ID="Hcar_modalidad" value="<?php echo set_value('car_modalidad'); ?>">
+                <select tabindex="40" id="car_modalidad" name="car_modalidad" class="form-control">
+                    <option value="ESCOLARIZADO">ESCOLARIZADO</option>
+                    <option value="DISTANCIA">DISTANCIA</option>
+                    <option value="ABIERTO">ABIERTO</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="asp_carrera">Carrera:</label>
+                <input type="hidden" ID="Hasp_carrera" value="<?php echo set_value('asp_carrera'); ?>">
+                <select tabindex="40" id="asp_carrera" name="asp_carrera" class="form-control"></select>
+            </div>
+        </div>
+         
+        <p>Vas a cambiar tu carrera:
+            <?php echo ($this->nativesession->get('asp')->solicitudes[0]->car_nombrecarrera);?>
+        </p>  
+        <p>Por: nueva carrera
+        </p>  
+        <br>
+        <button  type='submit' class="btn btn-primary btn-lg" tabindex="50" aria-describedby="dBregistrar">Aceptar</button>

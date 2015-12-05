@@ -1,0 +1,38 @@
+@media screen{
+	body{
+		background-color: black;
+	}
+	a,p,li,input{
+		font-size: 1.3em;
+		color: white;
+		background-color: black !important;
+	}
+	h1,h2,h3,h4,h5,h6{
+		font-size: 1.8em;
+		color: white !important;
+	}
+	input{
+		font-size: 1.3em !important;
+		background-color: black !important;
+		color: white !important;
+	}
+	table,th,td,tr{
+                font-size: 1em;
+                border: 1px solid white;
+	}
+	label{
+		font-size: 1.2em !important;
+		color: white;
+	}
+	select{
+		background-color: black !important;
+		color: white !important;
+	}
+	button{
+		font-size: 1.3em;
+		background-color: black !important;
+		color: white;
+	}
+
+
+}

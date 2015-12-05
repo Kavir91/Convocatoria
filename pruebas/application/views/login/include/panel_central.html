@@ -1,0 +1,60 @@
+<div class="form-group">
+    <center>
+        <!--<h1>Registro UV</h1>-->
+        <div>
+            <h2 role ="presentation" tabindex="2">
+
+                Si no tienes folio U V regístrate
+
+            </h2>
+        </div>
+        <DIV >
+    </center>
+
+    <div class="row" style=" text-align: center;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="<?php echo base_url() ?>index.php/declarativa">
+                <input class="btn btn-lg btn-primary" type="submit" tabindex="3"   value="Regístrate" aria-describedby="info3"> 
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <DIV CLASS="row">
+        <DIV CLASS="col-md-3">
+
+        </DIV>
+        <div CLASS="col-md-6" >
+            <form action="<?php echo base_url('index.php/login2/login') ?>" method="post" autocomplete="off">
+            <h2 tabindex="4" role="presentation"> Si ya tienes folio U V, inicia sesión</h2>
+            <label for="foliouv">Folio U V</label>
+            <input id="foliouv" tabindex="5" name="foliouv" class="form-control" placeholder="Folio U V" aria-required="true" type="text" aria-describedby="info1">
+            <br>
+            <label for="password">Contraseña</label>
+            <input id="password" tabindex="6" name="contrasena" class="form-control" placeholder="Contraseña" aria-required="true" type="password" aria-describedby="info2">
+            <br>
+            <center>
+                <input class="btn btn-lg btn-primary"  tabindex="7" type="submit" value="Entrar" aria-describedby="info4">
+            </center>
+            </form>
+        </div>
+        <DIV CLASS="col-md-3">
+
+        </DIV>
+    </DIV>
+
+</div>
+        
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60000234-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

@@ -1,0 +1,183 @@
+<h1 tabindex="2" role="presentation">Proceso para imprimir Folio UV</h1>
+
+
+<div class="list-group">
+    <a class="list-group-item active list-group-item-info">
+        <h3 class="list-group-item-heading" tabindex="2" role="presentation">Fecha</h3>
+    </a>
+
+    
+    <div class="list-group-item" tabindex="2" > 
+        <p>
+            <?php
+
+            $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado");
+            $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+            echo $dias[date('w')]." ".(date('d'))." de ".$meses[date('n')-1]. " del ".date('Y') ;
+
+
+            ?>
+        </p>
+    </div>  
+</div>
+<div class="list-group">
+    
+        <div tabindex="3" name="seccion" id="seccion1" class="list-group-item list-group-item-section">
+            <h3 class="list-group-item-heading" role="presentation">Seccion 1: Datos del Aspirante</h3>
+            <p>
+                Debes presionar la tecla tabulador para desplazarte sobre la sección.
+            </p>
+        </div>
+        
+    
+
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Nombre:</h4>
+        <p>
+            <?php echo $this->nativesession->get('asp')->aspirante->asp_nombres; ?>
+        </p>
+    </div>  
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Apellido Paterno:</h4>
+        <p>
+            <?php echo $this->nativesession->get('asp')->aspirante->asp_apellidopaterno; ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Apellido Materno:</h4>
+        <p>
+            <?php echo $this->nativesession->get('asp')->aspirante->asp_apellidomaterno; ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">FolioUV:</h4>
+        <p >
+            <?php echo $this->nativesession->get('asp')->aspirante->folio; ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Correo:</h4>
+        <p >
+            <?php echo $this->nativesession->get('asp')->aspirante->asp_email; ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Carrera solicitada:</h4>
+        <p >
+            <?php
+            echo ($this->nativesession->get('carrera')->car_nombrecarrera);
+            ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Región:</h4>
+        <p >
+            <?php
+            echo ($this->nativesession->get('carrera')->car_nombreregion);
+            ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Modalidad: </h4>
+        <p >
+            <?php
+            echo ($this->nativesession->get('carrera')->car_modalidad);
+            ?>
+        </p>
+    </div> 
+    <div class="list-group-item" tabindex="3" > 
+        <h4 role="presentation">Nivel:</h4>
+        <p>
+            <?php
+            echo ($this->nativesession->get('carrera')->car_nombrenivel);
+            ?>
+        </p>
+    </div> 
+
+
+</div>
+<div class="list-group">
+    
+        <div tabindex="4" name="seccion" id="seccion2" class="list-group-item list-group-item-section" >
+            <h3 class="list-group-item-heading" role="presentation">Sección 2: Recordatorio</h3>
+            <p>
+                Debes presionar la tecla tabulador para desplazarte sobre la sección.
+            </p>
+        </div>
+        
+    
+
+    <div class="list-group-item" tabindex="4" > 
+        <div class="justificado">
+            <p> IMPRIME EL FOLIO UV, ES TU CLAVE PERSONAL DE ACCESO AL SISTEMA JUNTO CON TU CONTRASEÑA.
+                ES TU RESPONSABILIDAD EL USO QUE SE HAGA DE ÉSTE FOLIO Y CONTRASEÑA, RESGUÁRDALOS.
+            </p> 
+        </div>
+    </div>  
+    <div class="list-group-item" tabindex="4" > 
+        <div class="justificado">
+            <p> Bajo protesta de decir la verdad, manifiesto que los datos que proporciono son verídicos 
+                y estoy consciente que al dar información falsa mi trámite de ingreso se cancelará.
+            </p> 
+        </div>
+    </div> 
+    <div class="list-group-item" tabindex="4" > 
+        <div class="justificado">
+            <p> Es responsabilidad del interesado realizar correctamente el registro y concluirlo 
+                según las fechas establecidas en la Convocatoria.
+            </p> 
+        </div>
+    </div> 
+</div>
+<div class="list-group">
+    
+        <div tabindex="5" name="seccion" id="seccion3" class="list-group-item list-group-item-section" >
+            <h3 class="list-group-item-heading" role="presentation">Sección 3: Pasos a seguir</h3>
+            <p>
+                Debes presionar la tecla tabulador para desplazarte sobre la sección.
+            </p>
+        </div>
+        
+    
+
+    <div class="list-group-item" tabindex="5" > 
+        <div class="justificado">
+            <p> PASO 1 SOLICITAR REGISTRO PARA EXAMEN
+            </p> 
+        </div>
+    </div>
+    <div class="list-group-item" tabindex="5" > 
+        <div class="justificado">
+            <p> IMPRIME TU FOLIO UV.
+                EN EL PANEL DE SOLICITUDES HAZ CLIC EN EL BOTÓN : IMPRIMIR FOLIO UV.
+                DESPUÉS INGRESA DATOS ESCOLARES Y PERSONALES.
+                POSTERIORMENTE CONTESTA EL CUESTIONARIO DE CONTEXTO.
+                IMPRIME LA ORDEN DE PAGO.
+                EN ELLA SE INDICA LA CLAVE DE REFENRENCIA PARA PAGAR EN EL BANCO.
+                SOLO LA DEBES DE USAR TÚ, ES PERSONAL, ÚNICA E INTRANSFERÍBLE.
+
+            </p> 
+        </div>
+    </div>
+
+</div>
+
+<form action='<?= base_url("index.php/imprimirfolio/imprimir") ?>'>
+    <input class="btn btn-lg btn-primary btn-block" type="submit" tabindex="6"   value="IMPRIMIR" aria-describedby="info1"> <br>
+</form>
+<form action="<?php echo base_url() ?>index.php/cpanel">
+    <input class="btn btn-lg btn-primary btn-block" type="submit" tabindex="6"   value="REGRESAR" aria-describedby="info2"> 
+</form>
+
+
+<div id="info1" aria-hidden="true" name = "Adesc">
+   ÉSTE BOTÓN TE LLEVARÁ A IMPRIMIR TU FOLIO, en esta página deberas apretar tabulador y enter para imprimir.
+</div>
+<div id="info2" aria-hidden="true" name = "Adesc">
+    ÉSTE BOTÓN TE LLEVARÁ A LA PÁGINA DE PROCESO DE INGRESO DE LICENCIATURA y TSU.
+</div>
+
+
+
+

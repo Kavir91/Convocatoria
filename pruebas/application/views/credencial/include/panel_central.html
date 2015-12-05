@@ -1,0 +1,15 @@
+<h3 tabindex="2" role="presentation">Haga clic en el botón imprimir, para imprimir su credencial de acceso al examen.</h3>
+
+<form action='<?= base_url("index.php/credencial/imprimir") ?>'>
+    <input class="btn btn-lg btn-primary btn-block" type="submit" tabindex="6"   value="IMPRIMIR" aria-describedby="info1"> <br>
+</form>
+<form action="<?php echo base_url() ?>index.php/cpanel">
+    <input class="btn btn-lg btn-primary btn-block" type="submit" tabindex="6"   value="REGRESAR" aria-describedby="info2"> 
+</form>
+
+<div id="info1" aria-hidden="true" name = "Adesc">
+    ÉSTE BOTÓN TE LLEVARÁ A la página de impresión de la credencial, en esta página deberas presionar tabulador y enter para imprimir.
+</div>
+<div id="info2" aria-hidden="true" name = "Adesc">
+    ÉSTE BOTÓN TE LLEVARÁ A LA PÁGINA DE PROCESO DE INGRESO DE LICENCIATURA y TSU.
+</div>

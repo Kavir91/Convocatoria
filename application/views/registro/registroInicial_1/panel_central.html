@@ -1,0 +1,32 @@
+<?php
+if($resultado->estatus=="OK"){ ?>
+
+
+<h2 role="presentation" tabindex="1">Hola <?php echo $resultado->datosUsuario->nombre_usuario;?>, tu registro ha sido exitoso.</h2>
+<h3 role="presentation" tabindex="2">Tu folio UV es: <?php echo $resultado->datosUsuario->folio; ?></h3>
+
+<?php 
+json_encode($resultado);
+?>
+
+<form action="<?php echo base_url()?>index.php/cpanel/">
+    <button tabindex="3" type="submit" class="btn btn-primary btn-lg">Continuar</button>
+</form>
+
+<?php }else{ ?>
+<h2 role="presentation" tabindex="1">Ha ocurrido un error, te pedimos que vuelvas a intentar registrarte.</h2>
+<form action="<?php echo base_url()?>index.php/registro/">
+    <button type="submit" class="btn btn-primary btn-lg" tabindex="2">Regresar a la página de registro</button>
+</form>
+<?php } ?>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60000234-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

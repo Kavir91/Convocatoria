@@ -1,0 +1,15 @@
+ <?php if ( $this->session->flashdata( 'error' ) ) : ?>
+ <div class="list-group" tabindex="0" id="panel2">
+    <a class="list-group-item active list-group-item-danger">
+        <h3 class="list-group-item-heading" role="presentation">Error</h3>
+        <p class="list-group-item-text"></p>
+    </a>
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading" role="presentation"></h4>
+            <p><?php echo $this->session->flashdata( 'error' ); ?></p>
+        
+        <p class="list-group-item-text"></p>
+    </a>
+</div>
+    
+<?php  endif; ?>

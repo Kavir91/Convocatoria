@@ -1,0 +1,584 @@
+
+<form action='<?php echo base_url()?>index.php/registro/dps' method='post'>
+    <div class="list-group">
+        <div tabindex="10" name="seccion" id="seccion1" class="list-group-item list-group-item-section">
+            <h2 role="presentation"> Sección 1; ¿Cuál es tu nivel máximo de estudios?.</h2>
+            <p>
+                Debes seleccionar tu nivel de estudios. Para comenzar, debes presionar la tecla tabulador, y luego seleccionar con las teclas izquierda y derecha del teclado.
+            </p>
+        </div>
+        <div class="list-group-item ">
+            <div class="row">
+                <input type="hidden" ID="Hasp_gradoescuela" value="<?php echo set_value('asp_gradoescuela'); ?>">
+                <div class="col-md-3">
+                    <center><input tabindex="10" id="asp_gradoescuelaI" name="asp_gradoescuela"  value="I" checked="" type="radio" class="radio" aria-describedby="dRasp_gradoescuelaI"></center>
+                    <center><label for="asp_gradoescuelaI">Inscrito en Sexto Semestre de Bachillerato</label></center>
+                </div>
+                <div class="col-md-3">
+                    <center><input tabindex="10" id="asp_gradoescuelaB" name="asp_gradoescuela"  value="B" type="radio" class="radio" aria-describedby="dRasp_gradoescuelaB"></center>
+                    <center><label for="asp_gradoescuelaB">Bachillerato concluído</label></center>
+                </div>
+                <div class="col-md-3">
+                    <center><input tabindex="10" id="asp_gradoescuelaS" name="asp_gradoescuela"  value="S" type="radio" class="radio" aria-describedby="dRasp_gradoescuelaS"></center>
+                    <center><label for="asp_gradoescuelaS">Secundaria</label></center>
+                </div>
+                <div class="col-md-3">
+                    <center><input tabindex="10" id="asp_gradoescuelaP" name="asp_gradoescuela"  value="P" type="radio" class="radio" aria-describedby="dRasp_gradoescuelaP"></center>
+                    <center><label for="asp_gradoescuelaP">Primaria</label></center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div id="divsec2">
+        <div class="list-group">
+            <div tabindex="20" name="seccion" id="seccion2" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 2; Datos de la escuela secundaria y bachillerato.</h2>
+                <p>
+                    Debes llenar cada uno de los campos con la información solicitada. Para comenzar, debes presionar la tecla tabulador.
+                </p>
+            </div>
+            <div class="list-group-item">
+                <div class="row" >
+                    <label for="asp_promediosecundaria"> ¿Cuál fué tu promedio en la secundaria? </label>
+                    <input onchange="quitarError('asp_promediosecundaria');" tabindex="20" name="asp_promediosecundaria" maxlength="4" value="<?php echo set_value('asp_promediosecundaria'); ?>" id="asp_promediosecundaria" min="6" max="10" type="text" class="form-control" aria-describedby="dIasp_promediosecundaria">
+                </div>
+                <div id="divHide">
+                    <div class="row" id="bachCon">
+                        <label id="Lasp_promediobach" for="asp_promediobach"> ¿Cuál fué tu promedio en el bachillerato? </label>
+                        <input onchange="quitarError('asp_promediobach')" tabindex="20" name="asp_promediobach" maxlength="4" value="<?php echo set_value('asp_promediobach'); ?>" id="asp_promediobach" min="6" max="10" type="text" class="form-control" aria-describedby="dIasp_promediobach">
+                    </div>
+                    <div class="row">
+                        <input type="hidden" id="Hasp_nopresentoexani1" value="<?php echo set_value('asp_nopresentoexani1'); ?>">
+                        <label id="L" for="asp_nopresentoexani1"> ¿Presentaste el EXANI 1 para el ingreso al Bachillerato? </label>
+                        <select tabindex="20" name="asp_nopresentoexani1" id="asp_nopresentoexani1" class="form-control" aria-describedby="dSasp_nopresentoexani1">
+                            <option value="1">SI</option>
+                            <option value="0">NO</option>
+                        </select>
+                    </div>
+                    <div class="row" id="Dasp_aniopresentoexani1">
+                        <label for="asp_aniopresentoexani1"> ¿En que año presentaste el EXANI 1? </label>
+                        <input tabindex="20" onchange="quitarError('asp_aniopresentoexani1')" name="asp_aniopresentoexani1" maxlength="4" value="<?php echo set_value('asp_aniopresentoexani1'); ?>" id="asp_aniopresentoexani1" min="1900" max="2099" type="text" class="form-control" aria-describedby="dIasp_aniopresentoexani1">
+                    </div>
+                </div>
+                <div id="divHide1">
+                    <div class="row">
+                        <input type="hidden" id="Hasp_anioingresoselect" value="<?php echo set_value('asp_anioingresoselect'); ?>">
+                        <label for="asp_anioingresoselect" id="asp_anioingresobachillerato">¿En qué año ingresaste al bachillerato? </label>
+                        <select tabindex="20" id="asp_anioingresoselect" name="asp_anioingresoselect" size="1" class="form-control" aria-describedby="dSasp_anioingresoselect">
+                            <option value="2013">2014</option>
+                            <option value="2013">2013</option>
+                            <option value="2012">2012</option>
+                            <option value="2011" selected="">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option>
+                            <option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option>
+                            <option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label  id="Lasp_mesegresoselect" for="asp_mesegresoselect">¿En qué mes y año egresarás del bachillerato? </label>
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="width: 60%">
+                                    <input type="hidden" id="Hasp_mesegresoselect" value="<?php echo set_value('asp_mesegresoselect'); ?>">
+                                    <select tabindex="20" id="asp_mesegresoselect" name="asp_mesegresoselect" size="1" class="form-control" aria-describedby="dSasp_mesegresoselect">
+                                        <option value="01" selected="">Enero</option><option value="02">Febrero</option><option value="03">Marzo</option><option value="04">Abril</option><option value="05">Mayo</option><option value="06">Junio</option><option value="07">Julio</option><option value="08" selected="">Agosto</option><option value="09">Septiembre</option><option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option>
+                                    </select>
+                                </td>
+                                <td style="width: 40%">
+                                    <input type="hidden" id="Hasp_anioegresoselect" value="<?php echo set_value('asp_anioegresoselect'); ?>">
+                                    <select tabindex="20" class="form-control" id="asp_anioegresoselect" name="asp_anioegresoselect" size="1" aria-describedby="dSasp_anioegresoselect">
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option>
+                                        <option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option>
+                                        <option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <input type="hidden" id="Hasp_areabachillerato" value="<?php echo set_value('asp_areabachillerato'); ?>">
+                        <label id="Lasp_areabachillerato" for="asp_areabachillerato" >¿Cuál área estás cursando en el bachillerato? </label>
+                        <select tabindex="20" id="asp_areabachillerato" name="asp_areabachillerato" size="1" class="form-control" aria-describedby="dSasp_areabachillerato">
+                            <option value="1" selected="">TECNICA</option>
+                            <option value="2">HUMANIDADES</option>
+                            <option value="3">ECONOMICO ADMINISTRATIVA</option>
+                            <option value="4">CIENCIAS DE LA SALUD</option>
+                            <option value="5">BIOLOGICAS</option>
+                            <option value="6">ARTES</option>
+                            <option value="0">OTRA</option>
+                        </select>
+                    </div>
+                </div>
+            </div><!-- fin list item -->
+        </div><!-- fin list group -->
+        <hr>
+    </div>
+
+    <div id="divsec3">
+        <div class="list-group">
+            <div tabindex="30" name="seccion" id="seccion3" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 3; Lugar donde estudias, o estudiaste el bachillerato.</h2>
+                <p>
+                    Debes seleccionar si estudiaste tu bachillerato en México, y en que estado. Para comenzar, debes presionar la tecla tabulador, y despues seleccionar con las teclas izquierda y derecha del teclado.
+                </p>
+            </div>
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="hidden" id="Hasp_estudioenmexico" value="<?php echo set_value('asp_estudioenmexico'); ?>">
+                        <label id="labelestudioenmexico" for="asp_estudioenmexico">¿Estudias tu bachillerato en la República Mexicana? </label>
+                        <table>
+                            <tr style="width: 100%">
+                                <td style="width: 50%">
+                                    <input tabindex="30" id="asp_estudioenmexico" name="asp_estudioenmexico" value="S" checked="" type="radio" aria-describedby="dRasp_estudioenmexico">
+                                    <label for="asp_estudioenmexico">Si</label>
+                                </td>
+                                <td style="width: 50%">
+                                    <input tabindex="30" id="asp_estudioenmexico1" name="asp_estudioenmexico" style="margin-left:50px;" value="N" type="radio" aria-describedby="dRasp_estudioenmexico1">
+                                    <label for="asp_estudioenmexico1">No</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6" id="bachPais">
+                        <input  id="Hasp_paisestudios" value="<?php echo set_value('asp_paisestudios'); ?>">
+                        <label for="asp_paisestudios">¿En cuál país? </label>
+                        <select tabindex="30" name="asp_paisestudios" id="asp_paisestudios" class="form-control" aria-describedby="dSasp_paisestudios">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row" id="noMexVer">
+                    <div class="col-md-6">
+                        <input type="hidden" id="Hasp_estudioenveracruz" value="<?php echo set_value('asp_estudioenveracruz'); ?>">
+                        <label id="labelestudioenveracruz">¿En el estado de Veracruz? </label>
+                        <table>
+                            <tr style="width: 100%">
+                                <td style="width: 50%">
+                                    <input tabindex="30" id="asp_estudioenveracruz" name="asp_estudioenveracruz"  value="S" checked="" type="radio" aria-describedby="dRasp_estudioenveracruz">
+                                    <label for="asp_estudioenveracruz">Si</label>
+                                </td>
+                                <td style="width: 50%">
+                                    <input tabindex="30" id="asp_estudioenveracruz1" name="asp_estudioenveracruz" style="margin-left:50px;" value="N" type="radio" aria-describedby="dRasp_estudioenveracruz1">
+                                    <label for="asp_estudioenveracruz1">No</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6" id="noVer">
+                        <input type="hidden" id="Hasp_estadoestudios" value="<?php echo set_value('asp_estadoestudios'); ?>">
+                        <label for="asp_estadoestudios">¿En cuál estado? </label>
+                        <select tabindex="30" name="asp_estadoestudios" id="asp_estadoestudios"  class="form-control" aria-describedby="dSasp_estadoestudios">
+
+                        </select>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <hr>
+    </div>
+
+    <div id="divsec4">
+        <div class="list-group">
+            <div tabindex="40" name="seccion" id="seccion4" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 4; Datos del bachillerato.</h2>
+                <p>
+                    En esta sección, debes seleccionar tu bachillerato. Para comenzar, debes presionar la tecla tabulador, y seleccionar con las teclas arriba y abajo del teclado.
+                </p>
+            </div>
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="hidden" id="Hlistamunicipios" value="<?php echo set_value('listamunicipios'); ?>">
+                        <label for="listamunicipios" >Municipio</label>
+                        <select tabindex="40" id="listamunicipios" name="listamunicipios" class="form-control" aria-describedby="dSlistamunicipios">
+                            <option value="2081">ACAJETE</option><option value="2082">ACATLAN</option><option value="2083">ACAYUCAN</option><option value="2084">ACTOPAN</option><option value="2085">ACULA</option><option value="2086">ACULTZINGO</option><option value="2087">CAMARON DE TEJEDA</option><option value="2088">ALPATLAHUAC</option><option value="2089">ALTO LUCERO DE GUTIERREZ BARRIOS</option><option value="2090">ALTOTONGA</option><option value="2091">ALVARADO</option><option value="2092">AMATITLAN</option><option value="2093">NARANJOS AMATLAN</option><option value="2094">AMATLAN DE LOS REYES</option><option value="2095">ANGEL R. CABADA</option><option value="2096">LA ANTIGUA</option><option value="2097">APAZAPAN</option><option value="2098">AQUILA</option><option value="2099">ASTACINGA</option><option value="2100">ATLAHUILCO</option><option value="2101">ATOYAC</option><option value="2102">ATZACAN</option><option value="2103">ATZALAN</option><option value="2104">TLALTETELA</option>
+                            <option value="2105">AYAHUALULCO</option><option value="2106">BANDERILLA</option><option value="2107">BENITO JUAREZ</option><option value="2108">BOCA DEL RIO</option><option value="2109">CALCAHUALCO</option><option value="2110">CAMERINO Z. MENDOZA</option><option value="2111">CARRILLO PUERTO</option><option value="2112">CATEMACO</option><option value="2113">CAZONES DE HERRERA</option><option value="2114">CERRO AZUL</option><option value="2115">CITLALTEPETL</option><option value="2116">COACOATZINTLA</option><option value="2117">COAHUITLAN</option><option value="2118">COATEPEC</option><option value="2119">COATZACOALCOS</option><option value="2120">COATZINTLA</option><option value="2121">COETZALA</option><option value="2122">COLIPA</option><option value="2123">COMAPA</option><option value="2124">CORDOBA</option><option value="2125">COSAMALOAPAN DE CARPIO</option><option value="2126">COSAUTLAN DE CARVAJAL</option><option value="2127">COSCOMATEPEC</option>
+                            <option value="2128">COSOLEACAQUE</option><option value="2129">COTAXTLA</option><option value="2130">COXQUIHUI</option><option value="2131">COYUTLA</option><option value="2132">CUICHAPA</option><option value="2133">CUITLAHUAC</option><option value="2134">CHACALTIANGUIS</option><option value="2135">CHALMA</option><option value="2136">CHICONAMEL</option><option value="2137">CHICONQUIACO</option><option value="2138">CHICONTEPEC</option><option value="2139">CHINAMECA</option><option value="2140">CHINAMPA DE GOROSTIZA</option><option value="2141">LAS CHOAPAS</option><option value="2142">CHOCAMAN</option><option value="2143">CHONTLA</option><option value="2144">CHUMATLAN</option><option value="2145">EMILIANO ZAPATA</option><option value="2146">ESPINAL</option><option value="2147">FILOMENO MATA</option><option value="2148">FORTIN</option><option value="2149">GUTIERREZ ZAMORA</option><option value="2150">HIDALGOTITLAN</option><option value="2151">HUATUSCO</option>
+                            <option value="2152">HUAYACOCOTLA</option><option value="2153">HUEYAPAN DE OCAMPO</option><option value="2154">HUILOAPAN DE CUAUHTEMOC</option><option value="2155">IGNACIO DE LA LLAVE</option><option value="2156">ILAMATLAN</option><option value="2157">ISLA</option><option value="2158">IXCATEPEC</option><option value="2159">IXHUACAN DE LOS REYES</option><option value="2160">IXHUATLAN DEL CAFE</option><option value="2161">IXHUATLANCILLO</option><option value="2162">IXHUATLAN DEL SURESTE</option><option value="2163">IXHUATLAN DE MADERO</option><option value="2164">IXMATLAHUACAN</option><option value="2165">IXTACZOQUITLAN</option><option value="2166">JALACINGO</option><option value="2167" selected>XALAPA</option><option value="2168">JALCOMULCO</option><option value="2169">JALTIPAN</option><option value="2170">JAMAPA</option><option value="2171">JESUS CARRANZA</option><option value="2172">XICO</option><option value="2173">JILOTEPEC</option><option value="2174">JUAN RODRIGUEZ CLARA</option>
+                            <option value="2175">JUCHIQUE DE FERRER</option><option value="2176">LANDERO Y COSS</option><option value="2177">LERDO DE TEJADA</option><option value="2178">MAGDALENA</option><option value="2179">MALTRATA</option><option value="2180">MANLIO FABIO ALTAMIRANO</option><option value="2181">MARIANO ESCOBEDO</option><option value="2182">MARTINEZ DE LA TORRE</option><option value="2183">MECATLAN</option><option value="2184">MECAYAPAN</option><option value="2185">MEDELLIN</option><option value="2186">MIAHUATLAN</option><option value="2187">LAS MINAS</option><option value="2188">MINATITLAN</option><option value="2189">MISANTLA</option><option value="2190">MIXTLA DE ALTAMIRANO</option><option value="2191">MOLOACAN</option><option value="2192">NAOLINCO</option><option value="2193">NARANJAL</option><option value="2194">NAUTLA</option><option value="2195">NOGALES</option><option value="2196">OLUTA</option><option value="2197">OMEALCA</option><option value="2198">ORIZABA</option>
+                            <option value="2199">OTATITLAN</option><option value="2200">OTEAPAN</option><option value="2201">OZULUAMA DE MASCAREÑAS</option><option value="2202">PAJAPAN</option><option value="2203">PANUCO</option><option value="2204">PAPANTLA</option><option value="2205">PASO DEL MACHO</option><option value="2206">PASO DE OVEJAS</option><option value="2207">LA PERLA</option><option value="2208">PEROTE</option><option value="2209">PLATON SANCHEZ</option><option value="2210">PLAYA VICENTE</option><option value="2211">POZA RICA DE HIDALGO</option><option value="2212">LAS VIGAS DE RAMIREZ</option><option value="2213">PUEBLO VIEJO</option><option value="2214">PUENTE NACIONAL</option><option value="2215">RAFAEL DELGADO</option><option value="2216">RAFAEL LUCIO</option><option value="2217">LOS REYES</option><option value="2218">RIO BLANCO</option><option value="2219">SALTABARRANCA</option><option value="2220">SAN ANDRES TENEJAPAN</option><option value="2221">SAN ANDRES TUXTLA</option>
+                            <option value="2222">SAN JUAN EVANGELISTA</option><option value="2223">SANTIAGO TUXTLA</option><option value="2224">SAYULA DE ALEMAN</option><option value="2225">SOCONUSCO</option><option value="2226">SOCHIAPA</option><option value="2227">SOLEDAD ATZOMPA</option><option value="2228">SOLEDAD DE DOBLADO</option><option value="2229">SOTEAPAN</option><option value="2230">TAMALIN</option><option value="2231">TAMIAHUA</option><option value="2232">TAMPICO ALTO</option><option value="2233">TANCOCO</option><option value="2234">TANTIMA</option><option value="2235">TANTOYUCA</option><option value="2236">TATATILA</option><option value="2237">CASTILLO DE TEAYO</option><option value="2238">TECOLUTLA</option><option value="2239">TEHUIPANGO</option><option value="2240">ALAMO TEMAPACHE</option><option value="2241">TEMPOAL</option><option value="2242">TENAMPA</option><option value="2243">TENOCHTITLAN</option><option value="2244">TEOCELO</option><option value="2245">TEPATLAXCO</option>
+                            <option value="2246">TEPETLAN</option><option value="2247">TEPETZINTLA</option><option value="2248">TEQUILA</option><option value="2249">JOSE AZUETA</option><option value="2250">TEXCATEPEC</option><option value="2251">TEXHUACAN</option><option value="2252">TEXISTEPEC</option><option value="2253">TEZONAPA</option><option value="2254">TIERRA BLANCA</option><option value="2255">TIHUATLAN</option><option value="2256">TLACOJALPAN</option><option value="2257">TLACOLULAN</option><option value="2258">TLACOTALPAN</option><option value="2259">TLACOTEPEC DE MEJIA</option><option value="2260">TLACHICHILCO</option><option value="2261">TLALIXCOYAN</option><option value="2262">TLALNELHUAYOCAN</option><option value="2263">TLAPACOYAN</option><option value="2264">TLAQUILPA</option><option value="2265">TLILAPAN</option><option value="2266">TOMATLAN</option><option value="2267">TONAYAN</option><option value="2268">TOTUTLA</option><option value="2269">TUXPAN</option><option value="2270">TUXTILLA</option>
+                            <option value="2271">URSULO GALVAN</option><option value="2272">VEGA DE ALATORRE</option><option value="2273">VERACRUZ</option><option value="2274">VILLA ALDAMA</option><option value="2275">XOXOCOTLA</option><option value="2276">YANGA</option><option value="2277">YECUATLA</option><option value="2278">ZACUALPAN</option><option value="2279">ZARAGOZA</option><option value="2280">ZENTLA</option><option value="2281">ZONGOLICA</option><option value="2282">ZONTECOMATLAN DE LOPEZ Y FUENTES</option><option value="2283">ZOZOCOLCO DE HIDALGO</option><option value="2284">AGUA DULCE</option><option value="2285">EL HIGO</option><option value="2286">NANCHITAL DE LAZARO CARDENAS DEL RIO</option><option value="2287">TRES VALLES</option><option value="2288">CARLOS A. CARRILLO</option><option value="2289">TATAHUICAPAN DE JUAREZ</option><option value="2290">UXPANAPA</option><option value="2291">SAN RAFAEL</option><option value="2292">SANTIAGO SOCHIAPAN</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="hidden" id="Hlistasector" value="<?php echo set_value('listasector'); ?>">
+                        <label for="listasector">Sector</label>
+                        <select tabindex="40" id="listasector" name="listasector" class="form-control" aria-describedby="dSlistasector">
+                            <option value="PUBLICO">PUBLICO</option>
+                            <option value="PRIVADO">PRIVADO</option>
+                            <option value="OTRO">OTRO</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="hidden" id="Hlistaturnos" value="<?php echo set_value('listaturnos'); ?>">
+                        <label for="listaturnos">Turno</label>
+                        <select tabindex="40" id="listaturnos" name="listaturnos" class="form-control" aria-describedby="dSlistaturnos">
+                            <option value="MATUTINO">MATUTINO</option>
+                            <option value="VESPERTINO">VESPERTINO</option>
+                            <option value="OTRO">OTRO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="hidden" id="Hasp_escueladeprocedencia" value="<?php echo set_value('asp_escueladeprocedencia'); ?>">
+                        <label for="escuela">Escuela</label>
+                        <select tabindex="40" name="asp_escueladeprocedencia" id="asp_escueladeprocedencia" class="form-control" aria-describedby="dSescuela">
+
+                        </select>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <hr>
+    </div>
+
+    <div id="divsec5">
+        <div class="list-group">
+            <div tabindex="50" name="seccion" id="seccion5" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 5; Datos particulares.</h2>
+                <p>
+                    En esta sección debes escribir tus datos sobre donde vives. Para comenzar, debes presionar la tecla tabulador.
+                </p>
+            </div>
+            <div class="list-group-item">
+                <div class="row">
+                    <input type="hidden" id="Hasp_paisdomicilio" value="<?php echo set_value('asp_paisdomicilio'); ?>">
+                    <label for="asp_paisdomicilio">País donde vives</label>
+                    <select tabindex="50" id="asp_paisdomicilio" name="asp_paisdomicilio" class="form-control" aria-describedby="dSsPaisAct">
+                        <option value="99" selected="">MEXICO</option><option value="157">ESTADOS UNIDOS DE AMERICA</option><option value="29">CANADA</option> <option value="2">AFGANISTAN</option> <option value="3">ALBANIA</option> <option value="4">ALEMANIA</option> <option value="5">BURKINA FASO (EX- ALTO VOLTA)</option> <option value="6">ANGOLA</option> <option value="7">ARABE UNIDA (REPUBLICA)</option> <option value="8">ARGELIA</option> <option value="9">ARABIA SAUDITA</option> <option value="10">ARGENTINA</option> <option value="11">AUSTRALIA</option> <option value="12">AUSTRIA</option> <option value="13">BAHAMAS</option> <option value="14">BANGLADESH</option> <option value="15">BARBADOS</option> <option value="16">BELGICA</option> <option value="17">BELICE</option> <option value="18">BENIN</option> <option value="19">BHUTAN</option> <option value="20">MYANMAR (EX- BIRMANIA)</option> <option value="21">BOLIVIA</option> <option value="22">BOTSWANA</option> <option value="23">BRASIL</option> <option value="24">BRUNEI DARUSSALAM</option> <option value="25">BULGARIA</option> <option value="26">BURUNDI</option> <option value="27">CABO VERDE</option>
+                        <option value="28">"CAMERUN, REPUBLICA UNIDA DE"</option> <option value="30">COLOMBIA</option> <option value="31">CONGO</option> <option value="32">COREA DEL NORTE</option> <option value="33">COREA DEL SUR</option> <option value="34">COSTA DE MARFIL</option> <option value="35">COSTA RICA</option> <option value="36">CUBA</option> <option value="37">REPUBLICA CHECA</option> <option value="38">CHILE</option> <option value="39">CHIPRE</option> <option value="40">DINAMARCA</option> <option value="41">DJIBOUTI</option> <option value="42">DOMINICA</option> <option value="43">ECUADOR</option> <option value="44">EGIPTO</option> <option value="45">CHAD</option> <option value="46">EL SALVADOR</option> <option value="47">EMIRATOS ARABES UNIDOS</option> <option value="48">ESPAÑA</option> <option value="49">ETIOPIA</option> <option value="50">FIJI</option> <option value="51">FILIPINAS</option> <option value="52">FINLANDIA</option> <option value="53">FRANCIA</option>
+                        <option value="54">GABON</option> <option value="55">GAMBIA</option> <option value="56">GHANA</option> <option value="57">GRANADA</option> <option value="58">REINO UNIDO  (GRAN BRETAÑA)</option> <option value="59">GRECIA</option> <option value="60">GUATEMALA</option> <option value="61">GUINEA</option> <option value="62">GUINEA BISSAU</option> <option value="63">GUINEA ECUATORIAL</option> <option value="64">GUYANA</option> <option value="65">HAITI</option> <option value="66">ANTILLAS HOLANDESAS</option> <option value="67">HONDURAS</option> <option value="68">HUNGRIA</option> <option value="69">INDIA</option> <option value="70">INDONESIA</option> <option value="71">IRAN</option> <option value="72">IRAQ</option> <option value="73">IRLANDA</option> <option value="74">ISLANDIA</option> <option value="75">COMORAS</option> <option value="76">ISRAEL</option> <option value="77">ITALIA</option> <option value="78">JAMAHIRIYA ARABE LIBIA</option> <option value="79">JAMAICA</option> <option value="80">JAPON</option>
+                        <option value="81">JORDANIA</option> <option value="82">CAMBOYA (KAMPUCHEA)</option> <option value="83">KENYA</option> <option value="84">KUWAIT</option> <option value="85">LAOS</option> <option value="86">LESOTHO</option> <option value="87">LIBANO</option> <option value="88">LIBERIA</option> <option value="89">LUXEMBURGO</option> <option value="90">MADAGASCAR</option> <option value="91">MALASIA</option> <option value="92">MALAWI</option> <option value="93">MALDIVAS</option> <option value="94">MALI</option> <option value="95">MALTA</option> <option value="96">MARRUECOS</option> <option value="97">MAURICIO</option> <option value="98">MAURITANIA</option>  <option value="100">MONGOLIA</option> <option value="101">MOZAMBIQUE</option> <option value="102">NAMIBIA</option> <option value="103">NEPAL</option> <option value="104">NICARAGUA</option> <option value="105">NIGER</option> <option value="106">NIGERIA</option> <option value="107">NORUEGA</option>
+                        <option value="108">NUEVA ZELANDA</option> <option value="109">OMAN</option> <option value="110">PAKISTAN</option> <option value="111">PANAMA</option> <option value="112">PAPUA NUEVA GUINEA</option> <option value="113">PARAGUAY</option> <option value="114">PUERTO RICO</option> <option value="115">PERU</option> <option value="116">POLONIA</option> <option value="117">PORTUGAL</option> <option value="118">QATAR</option> <option value="119">REPUBLICA CENTROAFRICANA</option> <option value="120">REPUBLICA DEMOCRATICA DE ALEMANIA</option> <option value="121">REPUBLICA DOMINICANA</option> <option value="122">"CHINA, REPUBLICA POPULAR"</option> <option value="123">RWANDA</option> <option value="124">RUMANIA</option> <option value="125">SANTA LUCIA</option> <option value="126">SENEGAL</option> <option value="127">SIERRA LEONA</option> <option value="128">SINGAPUR</option> <option value="129">SIRIA</option> <option value="130">SOMALIA</option> <option value="131">SRI LANKA</option> <option value="132">SUDAFRICA</option>
+                        <option value="133">SUDAN</option> <option value="134">SUECIA</option> <option value="135">SUIZA</option> <option value="136">SURINAME</option> <option value="137">SWAZILANDIA</option> <option value="138">TAILANDIA</option> <option value="139">TAIWAN</option> <option value="140">TANZANIA</option> <option value="141">TOGO</option> <option value="142">TRINIDAD Y TOBAGO</option> <option value="143">TUNEZ</option> <option value="144">TURQUIA</option> <option value="145">UGANDA</option> <option value="146">RUSIA (URSS)</option> <option value="147">URUGUAY</option> <option value="148">VENEZUELA</option> <option value="149">VIETNAM</option> <option value="150">YEMEN</option> <option value="151">YEMEN DEMOCRATICO</option> <option value="152">SERBIA Y MONTENEGRO (EX- YUGOSLAVIA)</option> <option value="153">"CONGO, REP.DEMOCRATICA (EX- ZAIRE)"</option> <option value="154">ZAMBIA</option> <option value="155">ZIMBABWE</option> <option value="158">UCRANIA</option>
+                        <option value="159">ANDORRA</option> <option value="160">ANGUILLA</option> <option value="161">ANTIGUA Y BARBUDA</option> <option value="162">ISLAS VIRGENES AMERICANAS</option> <option value="163">ISLAS VIRGENES BRITANICAS</option> <option value="164">SANTO TOME Y PRINCIPE</option> <option value="165">ARMENIA</option> <option value="166">AZERBAIYAN</option> <option value="167">BAHREIN</option> <option value="168">BELARUA (EX- BIELORRUSIA)</option> <option value="169">BOSNIA Y HERZEGOVINA</option> <option value="170">CROACIA</option> <option value="171">ERITREA</option> <option value="172">ESLOVAQUIA</option> <option value="173">ESLOVENIA</option> <option value="174">ESTONIA</option> <option value="175">GEORGIA</option> <option value="176">ISLAS MARSHALL</option> <option value="177">ISLAS SALOMON</option> <option value="178">KAZAJSTAN</option> <option value="179">KIRGUISTAN</option> <option value="180">KIRIBATI</option> <option value="181">LETONIA</option> <option value="182">LIECHTENSTEIN</option>
+                        <option value="183">LITUANIA</option> <option value="184">MACEDONIA</option> <option value="185">MICRONESIA</option> <option value="186">MOLDOVA</option> <option value="187">MONACO</option> <option value="188">NAURU</option> <option value="189">PAISES BAJOS</option> <option value="190">PALAU</option> <option value="191">SAINT KITTS Y NEVIS</option> <option value="192">SAMOA</option> <option value="193">SAN MARINO</option> <option value="194">SAN VICENTE Y GRANADINAS</option> <option value="195">SANTA SEDE</option> <option value="196">SEYCHELLES</option> <option value="197">TAYIKISTAN</option> <option value="198">TIMOR</option> <option value="199">TONGA</option> <option value="200">TURKMENISTAN</option> <option value="201">TUVALU</option> <option value="202">UZBEKISTAN</option> <option value="203">VANAUTU</option> <option value="1">NO ESPECIFICADO</option>
+                    </select>
+                </div>
+                <div id="Dasp_mexico">
+                    <div class="row">
+                        <input type="hidden" id="Hasp_estadodomicilio" value="<?php echo set_value('asp_estadodomicilio'); ?>">
+                        <label for="asp_estadodomicilio">Estado donde vives</label>
+                        <select tabindex="50" id="asp_estadodomicilio" name="asp_estadodomicilio" class="form-control" aria-describedby="dSsEdoAct">
+                            <option value="1" title="30" selected="">VERACRUZ</option> <option value="2" title="1">AGUASCALIENTES</option> <option value="3" title="2">BAJA CALIFORNIA</option> <option value="4" title="3">BAJA CALIFORNIA SUR</option> <option value="5" title="4">CAMPECHE</option> <option value="6" title="5">COAHUILA</option> <option value="7" title="6">COLIMA</option> <option value="8" title="7">CHIAPAS</option> <option value="9" title="8">CHIHUAHUA</option> <option value="10" title="9">DISTRITO FEDERAL</option> <option value="11" title="10">DURANGO</option> <option value="12" title="11">GUANAJUATO</option> <option value="13" title="12">GUERRERO</option> <option value="14" title="13">HIDALGO</option> <option value="15" title="14">JALISCO</option> <option value="16" title="15">MEXICO</option> <option value="17" title="16">MICHOACAN</option> <option value="18" title="17">MORELOS</option> <option value="19" title="18">NAYARIT</option> <option value="20" title="19">NUEVO LEON</option> <option value="21" title="20">OAXACA</option> <option value="22" title="21">PUEBLA</option> <option value="23" title="22">QUERETARO</option> <option value="24" title="23">QUINTANA ROO</option> <option value="25" title="24">SAN LUIS POTOSI</option> <option value="26" title="25">SINALOA</option>
+                            <option value="27" title="26">SONORA</option> <option value="28" title="27">TABASCO</option> <option value="29" title="28">TAMAULIPAS</option> <option value="30" title="29">TLAXCALA</option> <option value="31" title="31">YUCATAN</option> <option value="32" title="32">ZACATECAS</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <input type="hidden" id="Hasp_municipiodomicilio" value="<?php echo set_value('asp_municipiodomicilio'); ?>">
+                        <label for="asp_municipiodomicilio">Municipio donde vives</label>
+                        <select tabindex="50" id="asp_municipiodomicilio" name="asp_municipiodomicilio" class="form-control" aria-describedby="dSsMunAct">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_localidaddomicilio" value="<?php echo set_value('asp_localidaddomicilio'); ?>">
+                    <label for="asp_localidaddomicilio">Localidad donde vives</label>
+                    <div id='DDasp_localidaddomicilio'>
+                        <select tabindex="50" id="asp_localidaddomicilio" name="asp_localidaddomicilio" class="form-control" aria-describedby="dSsLocAct">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="asp_domicilio">Domicilio</label>
+                    <input tabindex="50" onchange="quitarError('asp_domicilio')" maxlength="100" value="<?php echo set_value('asp_domicilio'); ?>" id="asp_domicilio" name="asp_domicilio" class="form-control" type="text" aria-describedby="dIdomAct">
+                </div>
+                <div class="row" id="Dasp_coloniadomicilio">
+                    <input type="hidden" id="Hasp_coloniadomicilio" value="<?php echo set_value('asp_coloniadomicilio'); ?>">
+                    <label for="asp_coloniadomicilio">Colonia donde vives</label>
+                    <select tabindex="50" id="asp_coloniadomicilio" name="asp_coloniadomicilio" class="form-control" aria-describedby="dSsColAct">
+
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="asp_codigopostal">Código postal</label>
+                    <input tabindex="50" onchange="quitarError('asp_codigopostal')" maxlength="5" value="<?php echo set_value('asp_codigopostal'); ?>" id="asp_codigopostal" name="asp_codigopostal" class="form-control" type="text" aria-describedby="dIsCP">
+                </div>
+                <hr>
+                <div class="row">
+                    <input type="hidden" id="Hasp_seguromedico" value="<?php echo set_value('asp_seguromedico'); ?>">
+                    <label for="asp_seguromedico">¿Tienes derecho a servicios médicos? </label>
+                    <select tabindex="50" id="asp_seguromedico" name="asp_seguromedico" class="form-control" aria-describedby="dSsSmedicos">
+                        <option value="1" selected="">Ninguno</option>
+                        <option value="2">Del Seguro Social (IMSS)</option>
+                        <option value="3">Del ISSSTE</option>
+                        <option value="4">Del ISSSTE estatal</option>
+                        <option value="5">De Pemex, Defensa o Marina</option>
+                        <option value="6">Del Seguro Popular o para una Nueva Generación</option>
+                        <option value="7">De un seguro privado</option>
+                        <option value="8">De la UV</option>
+                        <option value="9">De otra institución</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_religion" value="<?php echo set_value('asp_religion'); ?>">
+                    <label for="asp_religion">¿Cuál es tu religión?</label>
+                    <select tabindex="50" id="asp_religion" name="asp_religion" class="form-control" aria-describedby="dSsReligion">
+                        <option value="0" selected="">NO DESEO DECLARARLA</option>
+                        <option value="1">SOY ADVENTISTA</option>
+                        <option value="2">SOY ADVENTISTA DEL SÉPTIMO DÍA</option>
+                        <option value="4">OTRA</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_lenguaindigena1" value="<?php echo set_value('asp_lenguaindigena1'); ?>">
+                    <label for="asp_lenguaindigena1">¿Hablas una lengua indígena?</label>
+                    <select tabindex="50" id="asp_lenguaindigena1" name="asp_lenguaindigena1" class="form-control" aria-describedby="dSsLenInd"> 
+                        <option value="1" selected="">NO</option>
+                        <option value="2">CHINANTECO</option>
+                        <option value="3">HUASTECO/TÉNEK</option>
+                        <option value="4">MAZATECO</option>
+                        <option value="5">NÁHUATL DEL NORTE</option>
+                        <option value="6">NÁHUATL DEL CENTRO</option>
+                        <option value="7">NÁHUATL DEL SUR</option>
+                        <option value="8">OTOMÍ</option>
+                        <option value="9">POPOLUCA</option>
+                        <option value="10">TEPEHUA</option>
+                        <option value="11">TOTONACO</option>
+                        <option value="12">ZAPOTECO</option>
+                        <option value="13">ZOQUE</option>
+                        <option value="14">OTRA</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_lenguaindigena2" value="<?php echo set_value('asp_lenguaindigena2'); ?>">
+                    <label for="asp_lenguaindigena2">¿Te consideras indígena?</label>
+                    <select tabindex="50" id="asp_lenguaindigena2" name="asp_lenguaindigena2" class="form-control" aria-describedby="dSsTeInd">
+                        <option value="1" selected="">NO</option>
+                        <option value="2">CHINANTECO</option>
+                        <option value="3">HUASTECO/TÉNEK</option>
+                        <option value="4">MAZATECO</option>
+                        <option value="5">NÁHUATL DEL NORTE</option>
+                        <option value="6">NÁHUATL DEL CENTRO</option>
+                        <option value="7">NÁHUATL DEL SUR</option>
+                        <option value="8">OTOMÍ</option>
+                        <option value="9">POPOLUCA</option>
+                        <option value="10">TEPEHUA</option>
+                        <option value="11">TOTONACO</option>
+                        <option value="12">ZAPOTECO</option>
+                        <option value="13">ZOQUE</option>
+                        <option value="14">OTRA</option>
+                    </select>
+                </div>
+            </div>   
+        </div>
+        <hr>
+    </div>
+
+    <div id="divsec6">
+        <div class="list-group">
+            <div tabindex="60" name="seccion" id="seccion6" class="list-group-item-section">
+                <h2 role="presentation"> Sección 6; En tu vida diaria, ¿tienes la dificultad de realizar las siguientes actividades?</h2>
+                <p>
+                    En esta sección debes seleccionar si tienes alguna limitación fisica o mental., Para comenzar, debes presionar la tecla tabulador, y despues seleccionar con las teclas arriba y abajo del teclado.
+                </p>
+            </div>
+            <div class="list-group-item">
+                <div class="row">
+                    <input type="hidden" id="Hasp_discapacidad1" value="<?php echo set_value('asp_discapacidad1'); ?>">
+                    <label for="asp_discapacidad1">Caminar, moverte, subir o bajar:</label>
+                    <select Sdiscapacidad="true" tabindex="60" id="asp_discapacidad1" name="asp_discapacidad1" class="form-control" aria-describedby="dSsCmsb">
+                        <option value="S">SÍ</option>
+                        <option value="N" selected="">NO</option>
+                    </select>
+                    <input type="hidden" id="Hasp_motivo_1" value="<?php echo set_value('asp_motivo_1'); ?>">
+                    <select class="form-control" name="asp_motivo_1" id="asp_motivo_1">
+                        <option value="1">Nacimiento</option>
+                        <option value="2">Enfermedad</option>
+                        <option value="3">Accidente</option>
+                        <option value="4">Edad avanzada</option>
+                        <option value="5">Otra causa</option>
+                    </select>
+
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_discapacidad5" value="<?php echo set_value('asp_discapacidad5'); ?>">
+                    <label for="asp_discapacidad5">Vestirte, bañarte o comer:</label>
+                    <select Sdiscapacidad="true" tabindex="60" id="asp_discapacidad5" name="asp_discapacidad5" class="form-control" aria-describedby="dSsVbc">
+                        <option value="S">SÍ</option>
+                        <option value="N" selected="">NO</option>
+                    </select>
+                    <input type="hidden" id="Hasp_motivo_5" value="<?php echo set_value('asp_motivo_5'); ?>">
+                    <select class="form-control" name="asp_motivo_5" id="asp_motivo_5">
+                        <option value="1">Nacimiento</option>
+                        <option value="2">Enfermedad</option>
+                        <option value="3">Accidente</option>
+                        <option value="4">Edad avanzada</option>
+                        <option value="5">Otra causa</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_discapacidad2" value="<?php echo set_value('asp_discapacidad2'); ?>">
+                    <label for="asp_discapacidad2">Ver aún usando lentes:</label>
+                    <select Sdiscapacidad="true" tabindex="60" id="asp_discapacidad2" name="asp_discapacidad2" class="form-control" aria-describedby="dSsVerLentes">
+                        <option value="S">SÍ</option>
+                        <option value="N" selected="">NO</option>
+                    </select>
+                    <input type="hidden" id="Hasp_motivo_2" value="<?php echo set_value('asp_motivo_2'); ?>">
+                    <select class="form-control" name="asp_motivo_2" id="asp_motivo_2">
+                        <option value="1">Nacimiento</option>
+                        <option value="2">Enfermedad</option>
+                        <option value="3">Accidente</option>
+                        <option value="4">Edad avanzada</option>
+                        <option value="5">Otra causa</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_discapacidad6" value="<?php echo set_value('asp_discapacidad6'); ?>">
+                    <label for="asp_discapacidad6">Poner atención, o aprender cosas sencillas:</label>
+                    <select Sdiscapacidad="true" tabindex="60" id="asp_discapacidad6" name="asp_discapacidad6" class="form-control" aria-describedby="dSsAprender">
+                        <option value="S">SÍ</option>
+                        <option value="N" selected="">NO</option>
+                    </select>
+                    <input type="hidden" id="Hasp_motivo_6" value="<?php echo set_value('asp_motivo_6'); ?>">
+                    <select class="form-control" name="asp_motivo_6" id="asp_motivo_6">
+                        <option value="1">Nacimiento</option>
+                        <option value="2">Enfermedad</option>
+                        <option value="3">Accidente</option>
+                        <option value="4">Edad avanzada</option>
+                        <option value="5">Otra causa</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_discapacidad3" value="<?php echo set_value('asp_discapacidad3'); ?>">
+                    <label for="asp_discapacidad3">Hablar, comunicarte o conversar:</label>
+                    <select Sdiscapacidad="true" tabindex="60" id="asp_discapacidad3" name="asp_discapacidad3" class="form-control" aria-describedby="dSsHablar">
+                        <option value="S">SÍ</option>
+                        <option value="N" selected="">NO</option>
+                    </select>
+                    <input type="hidden" id="Hasp_motivo_3" value="<?php echo set_value('asp_motivo_3'); ?>">
+                    <select class="form-control" name="asp_motivo_3" id="asp_motivo_3">
+                        <option value="1">Nacimiento</option>
+                        <option value="2">Enfermedad</option>
+                        <option value="3">Accidente</option>
+                        <option value="4">Edad avanzada</option>
+                        <option value="5">Otra causa</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_discapacidad7" value="<?php echo set_value('asp_discapacidad7'); ?>">
+                    <label for="asp_discapacidad7">¿Tienes alguna limitación mental?:</label>
+                    <select Sdiscapacidad="true" tabindex="60" id="asp_discapacidad7" name="asp_discapacidad7" class="form-control" aria-describedby="dSsMental">
+                        <option value="S">SÍ</option>
+                        <option value="N" selected="">NO</option>
+                    </select>
+                    <input type="hidden" id="Hasp_motivo_7" value="<?php echo set_value('asp_motivo_7'); ?>">
+                    <select class="form-control" name="asp_motivo_7" id="asp_motivo_7">
+                        <option value="1">Nacimiento</option>
+                        <option value="2">Enfermedad</option>
+                        <option value="3">Accidente</option>
+                        <option value="4">Edad avanzada</option>
+                        <option value="5">Otra causa</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_discapacidad4" value="<?php echo set_value('asp_discapacidad4'); ?>">
+                    <label for="asp_discapacidad4">Oír aún usando aparato auditivo:</label>
+                    <select Sdiscapacidad="true" tabindex="60" id="asp_discapacidad4" name="asp_discapacidad4" class="form-control" aria-describedby="dSsAuditivo">
+                        <option value="S">SÍ</option>
+                        <option value="N" selected="">NO</option>
+                    </select>
+                    <input type="hidden" id="Hasp_motivo_4" value="<?php echo set_value('asp_motivo_4'); ?>">
+                    <select class="form-control" name="asp_motivo_4" id="asp_motivo_4">
+                        <option value="1">Nacimiento</option>
+                        <option value="2">Enfermedad</option>
+                        <option value="3">Accidente</option>
+                        <option value="4">Edad avanzada</option>
+                        <option value="5">Otra causa</option>
+                    </select>
+                </div>
+            </div>   
+        </div>
+        <hr>
+    </div>
+
+    <div id="divsec7">
+        <div class="list-group">
+            <div tabindex="70" name="seccion" id="seccion7" class="list-group-item list-group-item-section">
+                <h2 role="presentation"> Sección 7; Contacto de emergencia:</h2>
+                <p>
+                    En esta sección debes escribir los datos de una persona, en caso de alguna emergencia. Para comenzar, debes presionar la tecla tabulador.
+                </p>
+            </div>
+            <div class="list-group-item">
+                <div class="row">
+                    <label for="asp_nombretutor">Nombre:</label>
+                    <input tabindex="70" onchange="quitarError('asp_nombretutor')" maxlength="50" value="<?php echo set_value('asp_nombretutor'); ?>" id="asp_nombretutor" name="asp_nombretutor" class="form-control" type="text" aria-describedby="dIcEnombre">
+                </div>
+                <div class="row">
+                    <label for="asp_primerapellidotutor">Primer apellido:</label>
+                    <input tabindex="70" onchange="quitarError('asp_primerapellidotutor')" maxlength="50" value="<?php echo set_value('asp_primerapellidotutor'); ?>" id="asp_primerapellidotutor" name="asp_primerapellidotutor" class="form-control" type="text" aria-describedby="dIcEpAp">
+                </div>
+                <div class="row">
+                    <label for="asp_segundoapellidotutor">Segundo apellido:</label>
+                    <input tabindex="70" onchange="quitarError('asp_segundoapellidotutor')" maxlength="50" value="<?php echo set_value('asp_segundoapellidotutor'); ?>" id="asp_segundoapellidotutor" name="asp_segundoapellidotutor" class="form-control" type="text" aria-describedby="dIcEsAp">
+                </div>
+                <div class="row">
+                    <input type="hidden" id="Hasp_parentesco" value="<?php echo set_value('asp_parentesco'); ?>">
+                    <label for="asp_parentesco">Parentesco:</label>
+                    <select tabindex="70" id="asp_parentesco" name="asp_parentesco" class="form-control" aria-describedby="dSscEparentesco">
+                        <option value="1">PADRE</option>
+                        <option value="2" selected="">MADRE</option>
+                        <option value="3">FAMILIAR</option>
+                        <option value="4">OTRO</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label for="asp_emailtutor">Correo electrónico:</label>
+                    <input tabindex="70" onchange="quitarError('asp_emailtutor')" maxlength="50" value="<?php echo set_value('asp_emailtutor'); ?>" id="asp_emailtutor" name="asp_emailtutor" class="form-control" type="text" aria-describedby="dIsCP">
+                </div>
+                <div class="row">
+                    <label for="asp_emailtutorconfirma">Confirma correo electrónico:</label>
+                    <input tabindex="70" onchange="quitarError('asp_emailtutorconfirma')" maxlength="50" value="<?php echo set_value('asp_emailtutorconfirma'); ?>" id="asp_emailtutorconfirma" name="asp_emailtutorconfirma" class="form-control" type="text" aria-describedby="dIsCP">
+                </div>
+                <div class="row">
+                    <table style="width: 100%" role="presentation">
+                        <tr>
+                            <td style="width: 35%" role="presentation">
+                                <label for="asp_ladatutor">Lada</label>
+                                <input maxlength="3" onchange="quitarError('asp_ladatutor')" id="asp_ladatutor" value="<?php echo set_value('asp_ladatutor'); ?>" name="asp_ladatutor" class="form-control" type="text" aria-describedby="dIasp_lada" tabindex="70">
+                            </td>
+                            <td style="width: 65%" role="presentation">
+                                <label for="asp_telefonotutor">Teléfono</label>
+                                <input maxlength="7" onchange="quitarError('asp_telefonotutor')" id="asp_telefonotutor" value="<?php echo set_value('asp_telefonotutor'); ?>" name="asp_telefonotutor" class="form-control" type="text" aria-describedby="dIasp_telefono" tabindex="72">
+                            </td>
+                        </tr>
+                    </table> 
+                </div>
+                <div class="row">
+                    <table style="width: 100%" role="presentation">
+                        <tr>
+                            <td style="width: 35%" role="presentation">
+                                <label for="asp_ladatutorconfirma">Confirma Lada</label>
+                                <input maxlength="3" onchange="quitarError('asp_ladatutorconfirma')" id="asp_ladatutorconfirma" value="<?php echo set_value('asp_ladatutorconfirma'); ?>" name="asp_ladatutorconfirma" class="form-control" type="text" aria-describedby="dIasp_lada" tabindex="71">
+                            </td>
+                            <td style="width: 65%" role="presentation">
+                                <label for="asp_telefonotutorconfirma">Confirma Teléfono</label>
+                                <input maxlength="7" onchange="quitarError('asp_telefonotutorconfirma')" id="asp_telefonotutorconfirma" value="<?php echo set_value('asp_telefonotutorconfirma'); ?>" name="asp_telefonotutorconfirma" class="form-control" type="text" aria-describedby="dIasp_telefono" tabindex="73">
+                            </td>
+                        </tr>
+                    </table> 
+                </div>
+                <div class="row">
+                    <label for="asp_celulartutor">Número de celular:</label>
+                    <input maxlength="10" onchange="quitarError('asp_celulartutor')" tabindex="74" id="asp_celulartutor" value="<?php echo set_value('asp_celulartutor'); ?>" name="asp_celulartutor" class="form-control" type="text" aria-describedby="dIcEcelular">
+                </div>
+                <div class="row">
+                    <label for="asp_celulartutorconfirma">Confirma Número de celular:</label>
+                    <input maxlength="10" onchange="quitarError('asp_celulartutorconfirma')" tabindex="74" id="asp_celulartutorconfirma" value="<?php echo set_value('asp_celulartutorconfirma'); ?>" name="asp_celulartutorconfirma" class="form-control" type="text" aria-describedby="dIconfcEcelular">
+                </div>
+            </div>   
+        </div>
+        <hr>
+    </div>
+    <button style="color:#FFFFFF;  font-weight: bold;" type='submit' class="btn btn-primary btn-lg" tabindex="80" aria-describedby="dBregistrar">Guardar cambios</button>
+</form> 

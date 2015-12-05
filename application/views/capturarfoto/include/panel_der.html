@@ -1,0 +1,41 @@
+<?php if ( $errores!=null ) : ?>
+<div id="errorController">
+    <div role="alert" >
+        <div class="list-group" id="panel2" name="panel" tabindex="9" role="region" >
+            <a class="list-group-item active list-group-item-danger">
+                <p class="list-group-item-heading" role="alert">Error</p>
+                <p class="list-group-item-text"></p>
+            </a>
+            <div id='errores'>
+                <input  id='nErrores' type="hidden" value='<?php echo count($errores); ?>'>
+                <?php foreach ($errores as $key => $val){?>
+                <a id='E<?php echo $key; ?>' class="list-group-item" tabindex="9" onkeyup="if (event.keyCode === 13) {
+                        inputFocus('<?php echo $key; ?>')
+                    }" onclick="inputFocus('<?php echo $key; ?>')">
+                    <p class="list-group-item-heading"><?php echo $val ?></p>
+                    <p class="list-group-item-text"></p>
+                </a>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php  endif; ?>
+
+<div id="errorTipo">
+    <div class="list-group" id="panel2" name="panel" tabindex="9" role="alert">
+        <a class="list-group-item active list-group-item-danger">
+            <p class="list-group-item-heading" role="alert">Error</p>
+            <p class="list-group-item-text"></p>
+        </a>
+        <div id='errores'>
+            <a id='Error1' class="list-group-item" tabindex="9" onkeyup="if (event.keyCode === 13) {
+                        inputFocus('userfile')
+                    }" onclick="inputFocus('userfile')">
+                <p class="list-group-item-heading" id="DError1"></p>
+                <p class="list-group-item-text"></p>
+            </a>
+        </div>
+    </div>
+</div>
+

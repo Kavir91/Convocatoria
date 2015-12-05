@@ -1,0 +1,27 @@
+
+@media print{
+    
+
+body{
+    
+}
+h4,h1,h2,h3,h5,h6{
+
+}
+p,a,td{
+    font-size: normal;
+}
+input, button{
+
+}
+.tamañofuente{
+
+}
+
+table,th,td{
+    font-size: normal;
+    border: 1px solid black;
+}
+
+
+}

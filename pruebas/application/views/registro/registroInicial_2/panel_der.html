@@ -1,0 +1,18 @@
+<?php if ( validation_errors()!="" ) : ?>
+<div role="alert">
+<div class="list-group" id="panel2" name="panel" tabindex="9" role="region">
+    <a class="list-group-item active list-group-item-danger">
+        <p class="list-group-item-heading" role="alert">Error</p>
+        <p class="list-group-item-text"></p>
+    </a>
+    <?php 
+    
+    foreach ($errores as $key => $val){?>
+    <a class="list-group-item" tabindex="9">
+        <p class="list-group-item-heading" role="alert"><?php echo $val ?></p>
+        <p class="list-group-item-text"></p>
+    </a>
+    <?php } ?>
+</div> 
+    </div>
+ <?php  endif; ?>

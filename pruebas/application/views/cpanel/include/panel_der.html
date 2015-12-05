@@ -1,0 +1,28 @@
+<div class="list-group" name="panel" id="panel2" tabindex="1">
+    <a class="">
+        <h4 role="presentation" class="list-group-item-heading">Aviso:</h4>
+        <p class="list-group-item-text"></p>
+    </a>
+    <a class="list-group-item">
+        <p tabindex="1" class="list-group-item-heading">Es obligatorio presentar una identificación oficial con fotografía 
+            el día del examen.</p>
+        <p class="list-group-item-text"></p>
+    </a>
+</div>
+
+<?php if ( $this->session->flashdata( 'correcto' ) ) { ?>
+<div class="list-group" tabindex="1" id="panel3">
+    <a class="list-group-item active list-group-item-info">
+        <h3 class="list-group-item-heading" role="presentation">Actualización de datos</h3>
+        <p class="list-group-item-text"></p>
+    </a>
+    <a class="list-group-item">
+        <h4 class="list-group-item-heading" role="presentation"></h4>
+        <div tabindex="1"><?php echo $this->session->flashdata( 'correcto' ); ?></div>
+
+        <p class="list-group-item-text"></p>
+    </a>
+</div>
+
+<?php  }else{ ?>
+<?php } ?>
