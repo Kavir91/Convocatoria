@@ -2,6 +2,7 @@
 <html lang="es">
     <head>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <script src= "<?php echo base_url() ?>/javascript/tamano.js"></script>
         <script src= "<?php echo base_url() ?>/javascript/jquery-1.11.1.min.js"></script>
         <script src="<?php echo base_url() ?>/javascript/inicio/scripts.js"></script>
         <script src="<?php echo base_url() ?>/bootstrap/js/bootstrap.min.js"></script>
@@ -12,8 +13,14 @@
         <link media="all" type="text/css" rel="stylesheet" href="<?php echo base_url() ?>/bootstrap/css/bootstrap.min[dark].css">
         <title>Registro U V</title>
     </head>
-
     <body class="container">
+        <div id="wrapper">
+            <div id="controls">
+                <a href="#" id="small" accesskey="1">A</a>
+                <a href="#" id="medium" accesskey="2" class="selected">A</a>
+                <a href="#" id="large" accesskey="3">A</a>
+            </div>
+        </div>
         <div tabindex="0" id="panel1">
             <h2 role="presentation">Instrucciones:</h2>
             <p>
@@ -39,7 +46,5 @@
         <form action="<?php echo base_url() ?>index.php/inicio/inicioconvocatoria">
             <input  class="btn btn-lg btn-primary btn-block" type="submit" value="Soy una persona con discapacidad visual y deseo acceder a la convocatoria" tabindex="0">
         </form>
-
-
     </body>
 </html>

@@ -2,17 +2,42 @@ $(document).ready(function () {
     console.log("seccion " + seccion_actual);
     var count_element = $('div[name=seccion]').length;
     var panel_count=$('div[name=panel]').length;
-    //////////////////
+    ////////////////// scripts para el ajuste de letras
+    $("#small").click(function (event) {
+        event.preventDefault();
+        $("h1").animate({"font-size": "34px"});
+        $("h2").animate({"font-size": "26px"});
+        $("p").animate({"font-size": "22px", "line-height": "26px"});
 
+    });
+
+    $("#medium").click(function (event) {
+        event.preventDefault();
+        $("h1").animate({"font-size": "46px"});
+        $("h2").animate({"font-size": "34px"});
+        $("p").animate({"font-size": "24px", "line-height": "30px"});
+
+    });
+
+    $("#large").click(function (event) {
+        event.preventDefault();
+        $("h1").animate({"font-size": "78px"});
+        $("h2").animate({"font-size": "50px"});
+        $("p").animate({"font-size": "36px", "line-height": "40px"});
+
+    });
+
+    $("a").click(function () {
+        $("a").removeClass("selected");
+        $(this).addClass("selected");
+
+    });
     //////////////////
     $('div[name=Adesc]').hide();
     $("#panel1").focus();
     var seccion_actual = 0;
     var panel_actual = 0;
     
-
-
-
     $(document).keydown(function (e) {
         var evtobj = window.event ? event : e;
         //console.log(evtobj.keyCode);

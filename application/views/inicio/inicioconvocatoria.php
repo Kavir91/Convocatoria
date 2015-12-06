@@ -14,7 +14,13 @@
         <title>Convocatoria U V</title>
     </head>
     <body class="container">
-
+        <div id="wrapper">
+            <div id="controls">
+                <a href="#" id="small" accesskey="1">A</a>
+                <a href="#" id="medium" accesskey="2" class="selected">A</a>
+                <a href="#" id="large" accesskey="3">A</a>
+            </div>
+        </div>
         <div  tabindex="0" id="panel1">
             <h2 role="presentation" tabindex="0">Instrucciones:</h2>
 

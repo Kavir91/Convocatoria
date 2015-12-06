@@ -6,7 +6,13 @@
     </head>
     <body>
         <div class="container">
-            
+            <div id="wrapper">
+                <div id="controls">
+                    <a href="#" id="small" accesskey="1">A</a>
+                    <a href="#" id="medium" accesskey="2" class="selected">A</a>
+                    <a href="#" id="large" accesskey="3">A</a>
+                </div>
+            </div>
             <div class="row">
                 <!-- panel izquiero -->
                 <div class="row" >
