@@ -2,6 +2,28 @@ $(document).ready(function () {
     console.log("seccion " + seccion_actual);
     var count_element = $('div[name=seccion]').length;
     var panel_count=$('div[name=panel]').length;
+    // cambiar css
+    var pasa = true;
+    $(document).keydown(function (event) {
+        console.log(event);
+        if (event.shiftKey && (event.key == "z" || event.key == "Z")) {
+            if (pasa) {
+                $('body').css("background", "#efefef").css("color", "#000");
+                $('#query').css("background", "#efefef").css("color", "#000");
+                $('h1,h2,h3,h4').css("background", "#efefef").css("color", "#000");
+                $('button').css("background", "#efefef").css("color", "#000");
+                pasa = false;
+            } else {
+                $('body').css("background", "#000").css("color", "#fff");
+                $('#query').css("background", "#000").css("color", "#fff");
+                $('h1,h2,h3,h4').css("background", "#000").css("color", "#fff");
+                pasa = true;
+            }
+        }
+    });
+    /////
+    
+    
     ////////////////// scripts para el ajuste de letras
     $("#small").click(function (event) {
         event.preventDefault();

@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '23.253.3.9';
-$db['default']['username'] = '945389_tyflo2015';
-$db['default']['password'] = 'TyflosUV2015';
-$db['default']['database'] = '945389_tyflos2015';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'examen';
+$db['default']['password'] = 'accesible';
+$db['default']['database'] = 'examenfinal';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

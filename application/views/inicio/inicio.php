@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <script src= "<?php echo base_url() ?>/javascript/tamano.js"></script>
+        <script src= "<?php echo base_url() ?>/javascript/cambiarcss.js?V=1"></script>
         <script src= "<?php echo base_url() ?>/javascript/jquery-1.11.1.min.js"></script>
         <script src="<?php echo base_url() ?>/javascript/inicio/scripts.js"></script>
         <script src="<?php echo base_url() ?>/bootstrap/js/bootstrap.min.js"></script>

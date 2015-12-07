@@ -6,24 +6,27 @@ html
 }
 #wrapper   { 
     margin: 0 auto;
+    
 }
 
 #controls  {  
     padding:2px;
     width:25px;
-    background:#333;
+    background:#2020ff;
     text-align: center;
-    transition:.25s ease-out;}
+    transition:.25s ease-out;
+}
 
 #controls a
 { 
+    background: #2020ff !important;
     font-size:24px;
-    color:#aaa;
+    color:#fff;
     display:block;
     font-weight:bold;
     padding: 5px;}
 
-a.selected  {  background:#000;
+a.selected  {  background-color: #2020ff !important;
                color:#fff !important;}
 
 #small     {  font-size:10px !important;}
