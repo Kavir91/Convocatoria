@@ -26,6 +26,7 @@
 
             <p tabindex="0">
                 Para desplazarte en esta página, debes presionar la tecla tabulador, para avanzar a la siguiente página, debes seleccionar alguna de las opciones que se indican y presionar la tecla enter, para volver a escuchar todo presiona f5.
+                Para ajustar el tamaño de letra si eres una persona con baja visión, puedes usar las teclas Alt Shift más, un número del 1 al 3.
             </p>
         </div>
 

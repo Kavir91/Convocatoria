@@ -12,6 +12,7 @@ $(document).ready(function () {
                 $('#query').css("background", "#efefef").css("color", "#000");
                 $('h1,h2,h3,h4').css("background", "#efefef").css("color", "#000");
                 $('button').css("background", "#efefef").css("color", "#000");
+                $('div').css("background", "#efefef").css("color", "#000");
                 pasa = false;
             } else {
                 $('body').css("background", "#000").css("color", "#fff");
