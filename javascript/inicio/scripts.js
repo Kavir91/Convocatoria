@@ -6,7 +6,7 @@ $(document).ready(function () {
     var pasa = true;
     $(document).keydown(function (event) {
         console.log(event);
-        if (event.shiftKey && (event.key == "z" || event.key == "Z")) {
+        if (event.shiftKey && (event.key == "z" && event.altKey || event.key == "Z" && event.altKey)) {
             if (pasa) {
                 $('body').css("background", "#efefef").css("color", "#000");
                 $('#query').css("background", "#efefef").css("color", "#000");
@@ -18,6 +18,7 @@ $(document).ready(function () {
                 $('body').css("background", "#000").css("color", "#fff");
                 $('#query').css("background", "#000").css("color", "#fff");
                 $('h1,h2,h3,h4').css("background", "#000").css("color", "#fff");
+                $('div').css("background", "#000").css("color", "#fff");
                 pasa = true;
             }
         }
