@@ -21,9 +21,7 @@ $(document).ready(function () {
                 pasa = true;
             }
         }
-    });
-    /////
-    
+    }); 
     
     ////////////////// scripts para el ajuste de letras
     $("#small").click(function (event) {
@@ -98,8 +96,6 @@ $(document).ready(function () {
         }
     });
 
-    
-    
     ////////////////////////////////////////////////////////
     $('div[name=panel]').focus(function () {
         $('div[name=seccion]').each(function () {
